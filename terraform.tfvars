@@ -1,0 +1,2 @@
+management_key = "K2wYWcZfiumVrXjRZjv5ugjhXuM4Suqm526tfUPg0F0GvaA8ZH0tGacm6qSsPa7qF2ApLAC"
+project_id = "P2wWOVwVgYFhrdYk9HcvSvbO2qb0"
