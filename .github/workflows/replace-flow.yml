@@ -35,4 +35,8 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
-          branch: ${{ env.BR
+          branch: ${{ env.BRANCH_NAME }}
+          commit-message: "Update Descope Flow: ${{ env.FLOW_NAME }}"
+          title: "Update Flow: ${{ env.FLOW_NAME }} from Staging"
+          body: "This PR contains the latest version of the flow exported from the staging project."
+          delete-branch: true
