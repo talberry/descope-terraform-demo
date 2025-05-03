@@ -1,0 +1,38 @@
+name: Export Flow from Staging Project
+
+on:
+  workflow_dispatch:
+
+env:
+  FLOW_NAME: sign-up-or-in
+  FLOW_PATH: flows/sign-up-or-in.json
+  EXPORT_DIR: tmp_snapshot
+  BRANCH_NAME: descope/update-flow
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+
+    env:
+      DESCOPE_PROJECT_ID: ${{ vars.STAGING_PROJECT_ID }}
+      DESCOPE_MANAGEMENT_KEY: ${{ secrets.DESCOPE_MGMT_KEY }}
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Download Descope CLI
+        run: |
+          curl -sSfL https://github.com/descope/descopecli/releases/download/v0.8.11/descopecli_Linux_x86_64.tar.gz | tar xz
+          chmod +x descopecli
+
+      - name: Export Flow Snapshot
+        run: |
+          mkdir -p ${{ env.EXPORT_DIR }}
+          ./descopecli project snapshot export "$DESCOPE_PROJECT_ID" --path ${{ env.EXPORT_DIR }} --include flows
+          cp "${{ env.EXPORT_DIR }}/flows/${{ env.FLOW_NAME }}.json" "${{ env.FLOW_PATH }}"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: ${{ env.BR
