@@ -1,15 +1,15 @@
-name: Export Flows from Staging
+name: Promote Flows from Staging
 
 on:
   workflow_dispatch:
 
 env:
-  FLOWS_DIR: flows
-  EXPORT_DIR: tmp_snapshot
+  FILES_PATH: flows
   BRANCH_NAME: descope/update-flows
 
 jobs:
-  export:
+  export-and-pr:
+    name: Export flows and create pull request
     runs-on: ubuntu-latest
 
     env:
@@ -17,7 +17,7 @@ jobs:
       DESCOPE_MANAGEMENT_KEY: ${{ secrets.DESCOPE_MGMT_KEY }}
 
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Install Descope CLI
@@ -28,18 +28,29 @@ jobs:
           chmod +x descopecli
           sudo mv descopecli /usr/local/bin/descopecli
 
-      - name: Export Flows from Staging
+      - name: Export flows from staging
+        id: export
         run: |
-          mkdir -p ${{ env.EXPORT_DIR }}
-          descopecli project snapshot export "$DESCOPE_PROJECT_ID" --path ${{ env.EXPORT_DIR }} --include flows
-          mkdir -p ${{ env.FLOWS_DIR }}
-          cp -r ${{ env.EXPORT_DIR }}/flows/* ${{ env.FLOWS_DIR }}/
+          mkdir -p tmp_snapshot
+          descopecli project snapshot export "$DESCOPE_PROJECT_ID" --path tmp_snapshot --include flows
 
-      - name: Create Pull Request
+          mkdir -p ${{ env.FILES_PATH }}
+          cp -r tmp_snapshot/flows/* ${{ env.FILES_PATH }}/
+
+          git config user.name github-actions
+          git config user.email github-actions@users.noreply.github.com
+
+          git add ${{ env.FILES_PATH }}
+          git diff --cached --exit-code > /dev/null || echo "has_changes=true" >> $GITHUB_OUTPUT
+
+      - name: Create pull request
+        if: steps.export.outputs.has_changes == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
           branch: ${{ env.BRANCH_NAME }}
           delete-branch: true
-          commit-message: "Update Descope flows from staging"
+          commit-message: "Update flows from staging"
           title: "Update Descope flows from staging"
-          body: "This pull request updates all flow definitions with the latest from the staging Descope project."
+          body: |
+            ### Description
+            This pull request updates the flow definitions in `flows/` based on the latest staging project snapshot.
