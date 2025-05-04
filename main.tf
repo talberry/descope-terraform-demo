@@ -42,6 +42,13 @@ resource "descope_project" "my_project" {
         secret_key = "<secret_key>"
         site_id = "<example_site_id>"
       }
+    ],
+    "mailersend": [
+      {
+        name = "MailerSend Connector"
+        api_key = "mlsn.614d2318b6d7b8749ea8069689236678ce64f0911b5e2bf60c242c08f9d2aff9"
+        sender = "test-86org8eeo0egew13@mlsender.net"
+      }
     ]
   }
 }
