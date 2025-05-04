@@ -21,7 +21,7 @@ jobs:
         uses: descope/descopecli/.github/actions/export@v0.8.11
         with:
           project_id: ${{ vars.STAGING_PROJECT_ID }}
-          management_key: ${{ secrets.MANAGEMENT_KEY }}
+          management_key: ${{ secrets.DESCOPE_MGMT_KEY }}
           files_path: ${{ env.FILES_PATH }}
           include: flows
 
