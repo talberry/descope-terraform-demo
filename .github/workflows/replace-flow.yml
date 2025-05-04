@@ -1,13 +1,12 @@
-name: Export Flow from Staging Project
+name: Export Flows from Staging
 
 on:
   workflow_dispatch:
 
 env:
-  FLOW_NAME: sign-up-or-in
-  FLOW_PATH: flows/sign-up-or-in.json
+  FLOWS_DIR: flows
   EXPORT_DIR: tmp_snapshot
-  BRANCH_NAME: descope/update-flow
+  BRANCH_NAME: descope/update-flows
 
 jobs:
   export:
@@ -18,25 +17,29 @@ jobs:
       DESCOPE_MANAGEMENT_KEY: ${{ secrets.DESCOPE_MGMT_KEY }}
 
     steps:
-      - name: Checkout Repo
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Download Descope CLI
+      - name: Install Descope CLI
         run: |
-          curl -sSfL https://descopecli.dev/install.sh | sh
+          VERSION=$(curl -s https://api.github.com/repos/descope/descopecli/releases/latest | grep tag_name | cut -d '"' -f4)
+          curl -sL "https://github.com/descope/descopecli/releases/download/${VERSION}/descopecli_Linux_x86_64.tar.gz" -o descopecli.tar.gz
+          tar -xzf descopecli.tar.gz
           chmod +x descopecli
+          sudo mv descopecli /usr/local/bin/descopecli
 
-      - name: Export Flow Snapshot
+      - name: Export Flows from Staging
         run: |
           mkdir -p ${{ env.EXPORT_DIR }}
-          ./descopecli project snapshot export "$DESCOPE_PROJECT_ID" --path ${{ env.EXPORT_DIR }} --include flows
-          cp "${{ env.EXPORT_DIR }}/flows/${{ env.FLOW_NAME }}.json" "${{ env.FLOW_PATH }}"
+          descopecli project snapshot export "$DESCOPE_PROJECT_ID" --path ${{ env.EXPORT_DIR }} --include flows
+          mkdir -p ${{ env.FLOWS_DIR }}
+          cp -r ${{ env.EXPORT_DIR }}/flows/* ${{ env.FLOWS_DIR }}/
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
           branch: ${{ env.BRANCH_NAME }}
-          commit-message: "Update Descope Flow: ${{ env.FLOW_NAME }}"
-          title: "Update Flow: ${{ env.FLOW_NAME }} from Staging"
-          body: "This PR contains the latest version of the flow exported from the staging project."
           delete-branch: true
+          commit-message: "Update Descope flows from staging"
+          title: "Update Descope flows from staging"
+          body: "This pull request updates all flow definitions with the latest from the staging Descope project."

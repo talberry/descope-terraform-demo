@@ -19,6 +19,9 @@ resource "descope_project" "my_project" {
     },
     "forgot-password" = {
       data = file("${path.module}/flows/forgot-password.json")
+    },
+    "sso-config-request" = {
+      data = file("${path.module}/flows/sso-config-request.json")
     }
   }
 
@@ -43,11 +46,20 @@ resource "descope_project" "my_project" {
         site_id = "<example_site_id>"
       }
     ],
-    "mailersend": [
+    "smtp": [
       {
-        name = "MailerSend Connector"
-        api_key = "mlsn.614d2318b6d7b8749ea8069689236678ce64f0911b5e2bf60c242c08f9d2aff9"
-        sender = "test-86org8eeo0egew13@mlsender.net"
+        name = "SMTP Connector"
+        authentication = {
+          "username" = "a1590ce4b6f834"
+          "password" = "bb6e89779e35ff"
+        }
+        sender = {
+          "email" = "bd3ed16c48-30b04d+1@inbox.mailtrap.io"
+        }
+        server = {
+          "host" = "sandbox.smtp.mailtrap.io"
+          "port" = "587"
+        }
       }
     ]
   }
