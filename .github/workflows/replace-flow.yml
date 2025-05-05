@@ -16,39 +16,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install Descope CLI
-        run: |
-          curl -sSL https://dl.descope.com/install.sh | bash
-          echo "/home/runner/.descope/bin" >> $GITHUB_PATH
-
       - name: Export Flows from Staging
         id: export
-        run: |
-          # Create output directory if it doesn't exist
-          mkdir -p ${{ env.FILES_PATH }}
-
-          # Export flows using descope flow export command
-          descope config set projectId ${{ vars.STAGING_PROJECT_ID }} --management-key ${{ secrets.DESCOPE_MGMT_KEY }}
-
-          # Track changes
-          CHANGES_FILE=$(mktemp)
-
-          # Get list of flows 
-          FLOWS=$(descope flow list --output json | jq -r '.[] | .id')
-
-          # Export each flow to the flows directory
-          for FLOW_ID in $FLOWS; do
-            echo "Exporting flow: $FLOW_ID"
-            descope flow export "$FLOW_ID" --output "${{ env.FILES_PATH }}/${FLOW_ID}.json"
-            echo "${{ env.FILES_PATH }}/${FLOW_ID}.json" >> $CHANGES_FILE
-          done
-
-          # Check if any changes occurred
-          if [ -s "$CHANGES_FILE" ]; then
-            echo "changes_file=$CHANGES_FILE" >> $GITHUB_OUTPUT
-          else
-            echo "No changes detected"
-          fi
+        uses: descope/descopecli/.github/actions/export@v0.8.11
+        with:
+          project_id: ${{ vars.STAGING_PROJECT_ID }}
+          management_key: ${{ secrets.DESCOPE_MGMT_KEY }}
+          files_path: ${{ env.FILES_PATH }}
+          include: flows
 
       - name: Cancel if No Changes
         if: steps.export.outputs.changes_file == ''
