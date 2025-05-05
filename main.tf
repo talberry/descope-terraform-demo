@@ -9,13 +9,19 @@ resource "descope_project" "my_project" {
 
   flows = {
     "sign-up-or-in" = {
-      data = file("${path.module}/flows/sign-up-or-in.json")
+      data = file("${path.module}/flows/flows/sign-up-or-in/contents.json")
     },
     "sign-in" = {
-      data = file("${path.module}/flows/sign-in.json")
+      data = file("${path.module}/flows/flows/sign-in/contents.json")
     },
     "sign-up" = {
-      data = file("${path.module}/flows/sign-up.json")
+      data = file("${path.module}/flows/flows/sign-up/contents.json")
+    },
+    "forgot-password" = {
+      data = file("${path.module}/flows/flows/forgot-password/contents.json")
+    },
+    "sso-config-request" = {
+      data = file("${path.module}/flows/flows/sso-config-request/contents.json")
     }
   }
 
