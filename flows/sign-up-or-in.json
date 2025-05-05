@@ -95,29 +95,6 @@
               "resolvedName": "Container"
             }
           },
-          "Cl2_OQOBaC": {
-            "custom": {},
-            "displayName": "Text",
-            "hidden": false,
-            "isCanvas": false,
-            "linkedNodes": {},
-            "nodes": [],
-            "parent": "ROOT",
-            "props": {
-              "children": "Member Login and Registration TEST\n\n",
-              "full-width": false,
-              "id": "Cl2_OQOBaC",
-              "isEnriched": true,
-              "italic": false,
-              "link-target-blank": true,
-              "mode": "primary",
-              "text-align": "center",
-              "variant": "h3"
-            },
-            "type": {
-              "resolvedName": "Text"
-            }
-          },
           "ROOT": {
             "custom": {},
             "displayName": "Container",
@@ -126,7 +103,6 @@
             "linkedNodes": {},
             "nodes": [
               "Vqjhp_hT8y",
-              "Cl2_OQOBaC",
               "69fAEt3qFj",
               "d2BuppDC30",
               "cdivS_4ad8",
@@ -973,29 +949,6 @@
             "resolvedName": "Container"
           }
         },
-        "Cl2_OQOBaC": {
-          "custom": {},
-          "displayName": "Text",
-          "hidden": false,
-          "isCanvas": false,
-          "linkedNodes": {},
-          "nodes": [],
-          "parent": "ROOT",
-          "props": {
-            "children": "Member Login and Registration TEST\n\n",
-            "full-width": false,
-            "id": "Cl2_OQOBaC",
-            "isEnriched": true,
-            "italic": false,
-            "link-target-blank": true,
-            "mode": "primary",
-            "text-align": "center",
-            "variant": "h3"
-          },
-          "type": {
-            "resolvedName": "Text"
-          }
-        },
         "ROOT": {
           "custom": {},
           "displayName": "Container",
@@ -1004,7 +957,6 @@
           "linkedNodes": {},
           "nodes": [
             "Vqjhp_hT8y",
-            "Cl2_OQOBaC",
             "69fAEt3qFj",
             "d2BuppDC30",
             "cdivS_4ad8",

@@ -17,6 +17,24 @@
           "externalId",
           "firstName"
         ],
+        "inputsMetadata": [
+          {
+            "displayName": "Email Input",
+            "key": "email"
+          },
+          {
+            "displayName": "Last Name Input",
+            "key": "lastName"
+          },
+          {
+            "displayName": "Custom Login ID Input",
+            "key": "externalId"
+          },
+          {
+            "displayName": "First Name Input",
+            "key": "firstName"
+          }
+        ],
         "name": "Registration with SSN",
         "next": {
           "rules": [
@@ -36,6 +54,7 @@
       "10": {
         "calculatedInputKeys": true,
         "id": "10",
+        "inputsMetadata": [],
         "name": "Success",
         "next": {
           "rules": [
@@ -133,6 +152,12 @@
         "inputKeys": [
           "form.idType"
         ],
+        "inputsMetadata": [
+          {
+            "displayName": "Single Select",
+            "key": "form.idType"
+          }
+        ],
         "name": "Registration Screen",
         "next": {
           "rules": [
@@ -157,6 +182,12 @@
         "id": "13",
         "inputKeys": [
           "form.mfaMethod"
+        ],
+        "inputsMetadata": [
+          {
+            "displayName": "Single Select",
+            "key": "form.mfaMethod"
+          }
         ],
         "name": "MFA Selection Screen",
         "next": {
@@ -221,8 +252,169 @@
         }
       },
       "15": {
+        "allInputKeys": [],
         "calculatedInputKeys": true,
+        "clientScripts": [],
+        "componentsConnectors": {},
+        "contextKeys": [
+          "device.location.origin"
+        ],
+        "dynamicSelects": {},
+        "htmlTemplate": {
+          "1sMmkeVxVT": {
+            "custom": {},
+            "displayName": "Error Message",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "ROOT",
+            "props": {
+              "align": "center",
+              "data-type": "error-message",
+              "full-width": false,
+              "id": "1sMmkeVxVT",
+              "italic": false,
+              "link-target-blank": true,
+              "mode": "error",
+              "text-align": "center",
+              "variant": "body1"
+            },
+            "type": {
+              "resolvedName": "ErrorMessage"
+            }
+          },
+          "2KsaYsI_cB": {
+            "custom": {},
+            "displayName": "Container",
+            "hidden": false,
+            "isCanvas": true,
+            "linkedNodes": {},
+            "nodes": [
+              "LmrSIGOWZb",
+              "f8ScpiFhev",
+              "_FMR9S3Sld"
+            ],
+            "parent": "ROOT",
+            "props": {
+              "align": "center",
+              "background": "#ffffff00",
+              "data-editor-type": "container",
+              "direction": "column",
+              "id": "2KsaYsI_cB",
+              "justify": "start",
+              "paddingX": "4",
+              "paddingY": "2",
+              "spaceBetween": "4",
+              "st-items-grow": 0,
+              "width": "100%"
+            },
+            "type": {
+              "resolvedName": "Container"
+            }
+          },
+          "LmrSIGOWZb": {
+            "custom": {},
+            "displayName": "Text",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "2KsaYsI_cB",
+            "props": {
+              "align": "center",
+              "children": "You're already enrolled\n\n",
+              "full-width": false,
+              "id": "LmrSIGOWZb",
+              "isEnriched": true,
+              "italic": false,
+              "link-target-blank": true,
+              "mode": "primary",
+              "text-align": "center",
+              "variant": "h3"
+            },
+            "type": {
+              "resolvedName": "Text"
+            }
+          },
+          "ROOT": {
+            "custom": {},
+            "displayName": "Container",
+            "hidden": false,
+            "isCanvas": true,
+            "linkedNodes": {},
+            "nodes": [
+              "2KsaYsI_cB",
+              "1sMmkeVxVT"
+            ],
+            "props": {
+              "align": "center",
+              "background": "",
+              "data-editor-type": "container",
+              "direction": "column",
+              "id": "ROOT",
+              "justify": "center",
+              "paddingX": "4",
+              "paddingY": "8",
+              "space-between": "md",
+              "spaceBetween": "4",
+              "st-items-grow": 0,
+              "width": "100%"
+            },
+            "type": {
+              "resolvedName": "Container"
+            }
+          },
+          "_FMR9S3Sld": {
+            "custom": {},
+            "displayName": "Link",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "2KsaYsI_cB",
+            "props": {
+              "children": "Sign In Page",
+              "full-width": false,
+              "href": "{{device.location.origin}}/#/login",
+              "id": "_FMR9S3Sld",
+              "italic": false,
+              "mode": "primary",
+              "target": "_blank",
+              "text-align": "center",
+              "variant": "body1"
+            },
+            "type": {
+              "resolvedName": "Link"
+            }
+          },
+          "f8ScpiFhev": {
+            "custom": {},
+            "displayName": "Text",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "2KsaYsI_cB",
+            "props": {
+              "children": "Click on the link below to sign in\n\n",
+              "full-width": false,
+              "id": "f8ScpiFhev",
+              "isEnriched": true,
+              "italic": false,
+              "link-target-blank": true,
+              "mode": "primary",
+              "text-align": "center",
+              "variant": "subtitle2"
+            },
+            "type": {
+              "resolvedName": "Text"
+            }
+          }
+        },
         "id": "15",
+        "inputsMetadata": [],
+        "interactions": [],
         "name": "Already Enrolled Screen",
         "next": {},
         "screenId": "SC2wZLerQxcJts1otg9c8mriMJFeT",
@@ -364,6 +556,12 @@
         ],
         "calculatedInputKeys": true,
         "id": "19",
+        "inputsMetadata": [
+          {
+            "displayName": "One Time Code",
+            "key": "code"
+          }
+        ],
         "name": "Verify TOTP",
         "next": {
           "rules": [
@@ -722,6 +920,12 @@
         "inputKeys": [
           "form.memberId"
         ],
+        "inputsMetadata": [
+          {
+            "displayName": "Input",
+            "key": "form.memberId"
+          }
+        ],
         "name": "Member ID Input Screen",
         "next": {
           "rules": [
@@ -746,6 +950,12 @@
         "id": "34",
         "inputKeys": [
           "form.ssn"
+        ],
+        "inputsMetadata": [
+          {
+            "displayName": "Input",
+            "key": "form.ssn"
+          }
         ],
         "name": "SSN Input Screen",
         "next": {
@@ -780,6 +990,24 @@
           "lastName",
           "externalId",
           "firstName"
+        ],
+        "inputsMetadata": [
+          {
+            "displayName": "Email Input",
+            "key": "email"
+          },
+          {
+            "displayName": "Last Name Input",
+            "key": "lastName"
+          },
+          {
+            "displayName": "Custom Login ID Input",
+            "key": "externalId"
+          },
+          {
+            "displayName": "First Name Input",
+            "key": "firstName"
+          }
         ],
         "name": "Registration with Member ID",
         "next": {
@@ -849,6 +1077,12 @@
           "sentTo.maskedEmail"
         ],
         "id": "6",
+        "inputsMetadata": [
+          {
+            "displayName": "One Time Code",
+            "key": "code"
+          }
+        ],
         "name": "Verify OTP",
         "next": {
           "rules": [
@@ -898,6 +1132,12 @@
         "id": "8",
         "inputKeys": [
           "newPassword"
+        ],
+        "inputsMetadata": [
+          {
+            "displayName": "New Password",
+            "key": "newPassword"
+          }
         ],
         "name": "Create Password",
         "next": {
@@ -2230,7 +2470,8 @@
           "linkedNodes": {},
           "nodes": [
             "LmrSIGOWZb",
-            "f8ScpiFhev"
+            "f8ScpiFhev",
+            "_FMR9S3Sld"
           ],
           "parent": "ROOT",
           "props": {
@@ -2302,6 +2543,29 @@
             "resolvedName": "Container"
           }
         },
+        "_FMR9S3Sld": {
+          "custom": {},
+          "displayName": "Link",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "2KsaYsI_cB",
+          "props": {
+            "children": "Sign In Page",
+            "full-width": false,
+            "href": "{{device.location.origin}}/#/login",
+            "id": "_FMR9S3Sld",
+            "italic": false,
+            "mode": "primary",
+            "target": "_blank",
+            "text-align": "center",
+            "variant": "body1"
+          },
+          "type": {
+            "resolvedName": "Link"
+          }
+        },
         "f8ScpiFhev": {
           "custom": {},
           "displayName": "Text",
@@ -2311,7 +2575,7 @@
           "nodes": [],
           "parent": "2KsaYsI_cB",
           "props": {
-            "children": "Please [sign in](http://localhost:4200/login) instead\n\n",
+            "children": "Click on the link below to sign in\n\n",
             "full-width": false,
             "id": "f8ScpiFhev",
             "isEnriched": true,
