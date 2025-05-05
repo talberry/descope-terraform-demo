@@ -29,7 +29,7 @@ jobs:
         if: steps.export.outputs.changes_file == ''
         shell: bash
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           echo 'Cancelling workflow — no changes detected.'
           gh run cancel "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY"
@@ -41,7 +41,7 @@ jobs:
         if: steps.export.outputs.changes_file != ''
         shell: bash
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
           DEFAULT_NAME: "${{ github.actor }}"
           DEFAULT_MAIL: "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
         run: |
