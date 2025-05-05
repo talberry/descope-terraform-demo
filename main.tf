@@ -9,7 +9,7 @@ resource "descope_project" "my_project" {
 
   flows = {
     "sign-up-or-in" = {
-      data = file("${path.module}/flows/flows/sign-up-or-in.json")
+      data = file("${path.module}/flows/sign-up-or-in.json")
     },
     "sign-in" = {
       data = file("${path.module}/flows/sign-in.json")
