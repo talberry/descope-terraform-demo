@@ -1,8 +1,0 @@
-{
-  "connectors": [
-    "forter",
-    "have-i-been-pwned",
-    "radiant-logic",
-    "smtp-connector"
-  ]
-}
