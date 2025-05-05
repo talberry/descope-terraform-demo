@@ -5,17 +5,17 @@
       "0": {
         "allInputKeys": [
           "email",
+          "lastName",
           "externalId",
-          "firstName",
-          "lastName"
+          "firstName"
         ],
         "calculatedInputKeys": true,
         "id": "0",
         "inputKeys": [
           "email",
+          "lastName",
           "externalId",
-          "firstName",
-          "lastName"
+          "firstName"
         ],
         "inputsMetadata": [
           {
@@ -35,7 +35,7 @@
             "key": "firstName"
           }
         ],
-        "name": "Registration",
+        "name": "Registration with SSN",
         "next": {
           "rules": [
             {
@@ -47,8 +47,8 @@
         "screenId": "SC2wWTjmln2KzMvkx2Wk5L2VGNBQK",
         "type": "screen",
         "view": {
-          "x": 1728,
-          "y": 72
+          "x": 3180,
+          "y": 552
         }
       },
       "10": {
@@ -67,8 +67,8 @@
         "screenId": "SC2wWZcPkBKmaAQDaaOn4HjswJgyU",
         "type": "screen",
         "view": {
-          "x": 7536,
-          "y": 456
+          "x": 8988,
+          "y": 504
         }
       },
       "11": {
@@ -90,7 +90,7 @@
               {
                 "key": "payload",
                 "type": "string",
-                "value": "{\n  \"email\" : \"{{unauthUser.email}}\"\n}"
+                "value": "{\n  \"ssn\" : \"{{form.ssn}}\"\n}"
               }
             ]
           },
@@ -120,38 +120,50 @@
             "errorHandlingType": "automatic"
           },
           "request_error": {
-            "errorHandlingType": "automatic"
+            "errorHandlingType": "custom"
           }
         },
         "id": "11",
-        "name": "Check Radiant Logic for User",
+        "name": "Check SSN",
         "next": {
           "rules": [
             {
               "interactionId": "success",
-              "taskId": "0"
+              "taskId": "32"
+            },
+            {
+              "interactionId": "request_error",
+              "taskId": "25"
             }
           ]
         },
         "type": "automated",
         "view": {
-          "x": 1236,
-          "y": 48
+          "x": 1728,
+          "y": 336
         }
       },
       "12": {
+        "allInputKeys": [
+          "form.idType"
+        ],
         "calculatedInputKeys": true,
         "id": "12",
         "inputKeys": [
-          ""
+          "form.idType"
         ],
-        "inputsMetadata": [],
+        "inputsMetadata": [
+          {
+            "displayName": "Single Select",
+            "key": "form.idType"
+          }
+        ],
         "name": "Registration Screen",
         "next": {
           "rules": [
             {
               "interactionId": "tkOlu93qRF",
-              "taskId": "14"
+              "taskId": "22"
             }
           ]
         },
@@ -189,8 +201,8 @@
         "screenId": "SC2wZLRWrLwN4WsqdWf1h22llS61S",
         "type": "screen",
         "view": {
-          "x": 4632,
-          "y": 264
+          "x": 6084,
+          "y": 312
         }
       },
       "14": {
@@ -198,19 +210,18 @@
           {
             "atomicConditions": [
               {
-                "operator": "empty",
+                "operator": "is-true",
                 "predicate": {
                   "type": "inline",
                   "value": ""
                 },
                 "target": {
                   "type": "context",
-                  "value": "unauthUser.loginIds"
+                  "value": "authInfo.firstSeen"
                 }
               }
             ],
             "interactionId": "a4aqa17y2nw",
-            "logicalOr": false,
             "name": "New User"
           },
           {
@@ -226,7 +237,7 @@
           "rules": [
             {
               "interactionId": "a4aqa17y2nw",
-              "taskId": "11"
+              "taskId": "0"
             },
             {
               "interactionId": "ELSE",
@@ -236,21 +247,181 @@
         },
         "type": "condition",
         "view": {
-          "x": 756,
-          "y": 12
+          "x": 2688,
+          "y": 516
         }
       },
       "15": {
+        "allInputKeys": [],
         "calculatedInputKeys": true,
+        "clientScripts": [],
+        "componentsConnectors": {},
+        "contextKeys": [
+          "device.location.origin"
+        ],
+        "dynamicSelects": {},
+        "htmlTemplate": {
+          "1sMmkeVxVT": {
+            "custom": {},
+            "displayName": "Error Message",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "ROOT",
+            "props": {
+              "align": "center",
+              "data-type": "error-message",
+              "full-width": false,
+              "id": "1sMmkeVxVT",
+              "italic": false,
+              "link-target-blank": true,
+              "mode": "error",
+              "text-align": "center",
+              "variant": "body1"
+            },
+            "type": {
+              "resolvedName": "ErrorMessage"
+            }
+          },
+          "2KsaYsI_cB": {
+            "custom": {},
+            "displayName": "Container",
+            "hidden": false,
+            "isCanvas": true,
+            "linkedNodes": {},
+            "nodes": [
+              "LmrSIGOWZb",
+              "f8ScpiFhev",
+              "_FMR9S3Sld"
+            ],
+            "parent": "ROOT",
+            "props": {
+              "align": "center",
+              "background": "#ffffff00",
+              "data-editor-type": "container",
+              "direction": "column",
+              "id": "2KsaYsI_cB",
+              "justify": "start",
+              "paddingX": "4",
+              "paddingY": "2",
+              "spaceBetween": "4",
+              "st-items-grow": 0,
+              "width": "100%"
+            },
+            "type": {
+              "resolvedName": "Container"
+            }
+          },
+          "LmrSIGOWZb": {
+            "custom": {},
+            "displayName": "Text",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "2KsaYsI_cB",
+            "props": {
+              "align": "center",
+              "children": "You're already enrolled\n\n",
+              "full-width": false,
+              "id": "LmrSIGOWZb",
+              "isEnriched": true,
+              "italic": false,
+              "link-target-blank": true,
+              "mode": "primary",
+              "text-align": "center",
+              "variant": "h3"
+            },
+            "type": {
+              "resolvedName": "Text"
+            }
+          },
+          "ROOT": {
+            "custom": {},
+            "displayName": "Container",
+            "hidden": false,
+            "isCanvas": true,
+            "linkedNodes": {},
+            "nodes": [
+              "2KsaYsI_cB",
+              "1sMmkeVxVT"
+            ],
+            "props": {
+              "align": "center",
+              "background": "",
+              "data-editor-type": "container",
+              "direction": "column",
+              "id": "ROOT",
+              "justify": "center",
+              "paddingX": "4",
+              "paddingY": "8",
+              "space-between": "md",
+              "spaceBetween": "4",
+              "st-items-grow": 0,
+              "width": "100%"
+            },
+            "type": {
+              "resolvedName": "Container"
+            }
+          },
+          "_FMR9S3Sld": {
+            "custom": {},
+            "displayName": "Link",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "2KsaYsI_cB",
+            "props": {
+              "children": "Sign In Page",
+              "full-width": false,
+              "href": "{{device.location.origin}}/#/login",
+              "id": "_FMR9S3Sld",
+              "italic": false,
+              "mode": "primary",
+              "target": "_blank",
+              "text-align": "center",
+              "variant": "body1"
+            },
+            "type": {
+              "resolvedName": "Link"
+            }
+          },
+          "f8ScpiFhev": {
+            "custom": {},
+            "displayName": "Text",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "2KsaYsI_cB",
+            "props": {
+              "children": "Click on the link below to sign in\n\n",
+              "full-width": false,
+              "id": "f8ScpiFhev",
+              "isEnriched": true,
+              "italic": false,
+              "link-target-blank": true,
+              "mode": "primary",
+              "text-align": "center",
+              "variant": "subtitle2"
+            },
+            "type": {
+              "resolvedName": "Text"
+            }
+          }
+        },
         "id": "15",
         "inputsMetadata": [],
+        "interactions": [],
         "name": "Already Enrolled Screen",
         "next": {},
         "screenId": "SC2wZLerQxcJts1otg9c8mriMJFeT",
         "type": "screen",
         "view": {
-          "x": 1236,
-          "y": 288
+          "x": 3180,
+          "y": 360
         }
       },
       "16": {
@@ -270,16 +441,13 @@
               }
             ],
             "interactionId": "goe884ylvw",
-            "logicalOr": false,
             "name": "Passkeys"
           },
           {
-            "atomicConditions": [],
             "interactionId": "ELSE",
             "name": "TOTP (Authenticator Apps)"
           }
         ],
-        "errorHandlingV2": {},
         "id": "16",
         "name": "What is the preferred MFA method?",
         "next": {
@@ -296,8 +464,8 @@
         },
         "type": "condition",
         "view": {
-          "x": 5112,
-          "y": 264
+          "x": 6564,
+          "y": 312
         }
       },
       "17": {
@@ -328,8 +496,8 @@
         },
         "type": "automated",
         "view": {
-          "x": 6084,
-          "y": 132
+          "x": 7536,
+          "y": 180
         }
       },
       "17.end": {
@@ -360,8 +528,8 @@
         },
         "type": "automated",
         "view": {
-          "x": 6084,
-          "y": 132
+          "x": 7536,
+          "y": 180
         }
       },
       "18": {
@@ -378,8 +546,8 @@
         },
         "type": "automated",
         "view": {
-          "x": 5592,
-          "y": 336
+          "x": 7044,
+          "y": 384
         }
       },
       "19": {
@@ -406,8 +574,8 @@
         "screenId": "SC2wZM1Qlbhs7x5EhKGep9TjVi5vD",
         "type": "screen",
         "view": {
-          "x": 6084,
-          "y": 372
+          "x": 7536,
+          "y": 420
         }
       },
       "20": {
@@ -424,8 +592,8 @@
         },
         "type": "automated",
         "view": {
-          "x": 6564,
-          "y": 396
+          "x": 8016,
+          "y": 444
         }
       },
       "21": {
@@ -459,8 +627,402 @@
         },
         "type": "automated",
         "view": {
-          "x": 7044,
-          "y": 432
+          "x": 8496,
+          "y": 480
+        }
+      },
+      "22": {
+        "conditions": [
+          {
+            "atomicConditions": [
+              {
+                "operator": "equal",
+                "predicate": {
+                  "type": "inline",
+                  "value": "Member ID"
+                },
+                "target": {
+                  "type": "context",
+                  "value": "form.idType"
+                }
+              }
+            ],
+            "interactionId": "hrwlb289v9",
+            "name": "Member ID"
+          },
+          {
+            "interactionId": "ELSE",
+            "name": "SSN"
+          }
+        ],
+        "id": "22",
+        "name": "Setting up account with",
+        "next": {
+          "rules": [
+            {
+              "interactionId": "hrwlb289v9",
+              "taskId": "33"
+            },
+            {
+              "interactionId": "ELSE",
+              "taskId": "34"
+            }
+          ]
+        },
+        "type": "condition",
+        "view": {
+          "x": 756,
+          "y": 12
+        }
+      },
+      "23": {
+        "action": "connector",
+        "arguments": {
+          "args": {
+            "type": "inline",
+            "value": [
+              {
+                "key": "endpoint",
+                "type": "string",
+                "value": "/api/user"
+              },
+              {
+                "key": "timeout",
+                "type": "number",
+                "value": 3
+              },
+              {
+                "key": "payload",
+                "type": "string",
+                "value": "{\n  \"memberId\" : \"{{form.memberId}}\"\n}"
+              }
+            ]
+          },
+          "async": {
+            "type": "inline",
+            "value": false
+          },
+          "command": {
+            "type": "inline",
+            "value": "post"
+          },
+          "connectorId": {
+            "type": "inline",
+            "value": "CI2wYdYv29QMIXTv6bGoV6Odo9c7Y"
+          },
+          "resultPath": {
+            "type": "inline",
+            "value": "httpResult"
+          },
+          "templateId": {
+            "type": "inline",
+            "value": "http"
+          }
+        },
+        "errorHandlingV2": {
+          "ConnectorFailed": {
+            "errorHandlingType": "automatic"
+          },
+          "request_error": {
+            "errorHandlingType": "custom"
+          }
+        },
+        "id": "23",
+        "name": "Check Member ID",
+        "next": {
+          "rules": [
+            {
+              "interactionId": "success",
+              "taskId": "31"
+            },
+            {
+              "interactionId": "request_error",
+              "taskId": "25"
+            }
+          ]
+        },
+        "type": "automated",
+        "view": {
+          "x": 1728,
+          "y": 48
+        }
+      },
+      "25": {
+        "calculatedInputKeys": true,
+        "id": "25",
+        "name": "Could Not Find User Screen",
+        "next": {},
+        "screenId": "SC2wf1arzXCzoIe0oIalsG3FqK30R",
+        "type": "screen",
+        "view": {
+          "x": 2208,
+          "y": 324
+        }
+      },
+      "26": {
+        "conditions": [
+          {
+            "atomicConditions": [
+              {
+                "operator": "is-true",
+                "predicate": {
+                  "type": "inline",
+                  "value": ""
+                },
+                "target": {
+                  "type": "context",
+                  "value": "authInfo.firstSeen"
+                }
+              }
+            ],
+            "interactionId": "a4aqa17y2nw",
+            "name": "New User"
+          },
+          {
+            "atomicConditions": [],
+            "interactionId": "ELSE",
+            "name": "Existing User"
+          }
+        ],
+        "errorHandlingV2": {},
+        "id": "26",
+        "name": "Is this a new user?",
+        "next": {
+          "rules": [
+            {
+              "interactionId": "a4aqa17y2nw",
+              "taskId": "35"
+            },
+            {
+              "interactionId": "ELSE",
+              "taskId": "15"
+            }
+          ]
+        },
+        "type": "condition",
+        "view": {
+          "x": 2688,
+          "y": 84
+        }
+      },
+      "31": {
+        "action": "scriptlet",
+        "arguments": {
+          "outputPath": {
+            "type": "inline",
+            "value": "scriptletResult"
+          },
+          "overrideForm": {
+            "type": "inline",
+            "value": [
+              {
+                "key": "form.email",
+                "type": "context",
+                "value": "scripts.scriptletResult.userEmail"
+              }
+            ]
+          },
+          "scriptArgs": {
+            "type": "inline",
+            "value": [
+              {
+                "key": "email",
+                "type": "context",
+                "value": "connectors.httpResult.email"
+              }
+            ]
+          },
+          "scriptCode": {
+            "type": "inline",
+            "value": "\nreturn {\n    userEmail: email\n};\n"
+          }
+        },
+        "errorHandlingV2": {
+          "ScriptletFailed": {
+            "errorHandlingType": "automatic"
+          }
+        },
+        "id": "31",
+        "name": "Scriptlet",
+        "next": {
+          "rules": [
+            {
+              "interactionId": "success",
+              "taskId": "26"
+            }
+          ]
+        },
+        "type": "automated",
+        "view": {
+          "x": 2208,
+          "y": 84
+        }
+      },
+      "32": {
+        "action": "scriptlet",
+        "arguments": {
+          "outputPath": {
+            "type": "inline",
+            "value": "scriptletResult"
+          },
+          "overrideForm": {
+            "type": "inline",
+            "value": [
+              {
+                "key": "form.email",
+                "type": "context",
+                "value": "scripts.scriptletResult.userEmail"
+              }
+            ]
+          },
+          "scriptArgs": {
+            "type": "inline",
+            "value": [
+              {
+                "key": "email",
+                "type": "context",
+                "value": "connectors.httpResult.email"
+              }
+            ]
+          },
+          "scriptCode": {
+            "type": "inline",
+            "value": "\nreturn {\n    userEmail: email\n};\n"
+          }
+        },
+        "errorHandlingV2": {
+          "ScriptletFailed": {
+            "errorHandlingType": "automatic"
+          }
+        },
+        "id": "32",
+        "name": "Scriptlet",
+        "next": {
+          "rules": [
+            {
+              "interactionId": "success",
+              "taskId": "14"
+            }
+          ]
+        },
+        "type": "automated",
+        "view": {
+          "x": 2208,
+          "y": 516
+        }
+      },
+      "33": {
+        "allInputKeys": [
+          "form.memberId"
+        ],
+        "calculatedInputKeys": true,
+        "id": "33",
+        "inputKeys": [
+          "form.memberId"
+        ],
+        "inputsMetadata": [
+          {
+            "displayName": "Input",
+            "key": "form.memberId"
+          }
+        ],
+        "name": "Member ID Input Screen",
+        "next": {
+          "rules": [
+            {
+              "interactionId": "tkOlu93qRF",
+              "taskId": "23"
+            }
+          ]
+        },
+        "screenId": "SC2wfTzh4BqchCaXNdDYCfD3KZy7G",
+        "type": "screen",
+        "view": {
+          "x": 1236,
+          "y": 48
+        }
+      },
+      "34": {
+        "allInputKeys": [
+          "form.ssn"
+        ],
+        "calculatedInputKeys": true,
+        "id": "34",
+        "inputKeys": [
+          "form.ssn"
+        ],
+        "inputsMetadata": [
+          {
+            "displayName": "Input",
+            "key": "form.ssn"
+          }
+        ],
+        "name": "SSN Input Screen",
+        "next": {
+          "rules": [
+            {
+              "interactionId": "tkOlu93qRF",
+              "taskId": "11"
+            }
+          ]
+        },
+        "screenId": "SC2wfTzmbKJt67dBM6bp7BIafzADz",
+        "type": "screen",
+        "view": {
+          "x": 1236,
+          "y": 336
+        }
+      },
+      "35": {
+        "allInputKeys": [
+          "email",
+          "lastName",
+          "externalId",
+          "firstName"
+        ],
+        "calculatedInputKeys": true,
+        "contextKeys": [
+          "form.memberId"
+        ],
+        "id": "35",
+        "inputKeys": [
+          "email",
+          "lastName",
+          "externalId",
+          "firstName"
+        ],
+        "inputsMetadata": [
+          {
+            "displayName": "Email Input",
+            "key": "email"
+          },
+          {
+            "displayName": "Last Name Input",
+            "key": "lastName"
+          },
+          {
+            "displayName": "Custom Login ID Input",
+            "key": "externalId"
+          },
+          {
+            "displayName": "First Name Input",
+            "key": "firstName"
+          }
+        ],
+        "name": "Registration with Member ID",
+        "next": {
+          "rules": [
+            {
+              "interactionId": "FFZJmFsDd2",
+              "taskId": "5"
+            }
+          ]
+        },
+        "screenId": "SC2wfUOyR77W0XiAVzZURAormUAG9",
+        "type": "screen",
+        "view": {
+          "x": 3180,
+          "y": 120
         }
       },
       "4": {
@@ -470,8 +1032,8 @@
         "next": {},
         "type": "automated",
         "view": {
-          "x": 8016,
-          "y": 528
+          "x": 9468,
+          "y": 576
         }
       },
       "5": {
@@ -502,8 +1064,8 @@
         },
         "type": "automated",
         "view": {
-          "x": 2208,
-          "y": 108
+          "x": 3660,
+          "y": 144
         }
       },
       "6": {
@@ -537,8 +1099,8 @@
         "screenId": "SC2wWZSgPanZDGGRdhuc6GLx2eN4p",
         "type": "screen",
         "view": {
-          "x": 2688,
-          "y": 108
+          "x": 4140,
+          "y": 156
         }
       },
       "7": {
@@ -555,8 +1117,8 @@
         },
         "type": "automated",
         "view": {
-          "x": 3180,
-          "y": 168
+          "x": 4632,
+          "y": 216
         }
       },
       "8": {
@@ -589,8 +1151,8 @@
         "screenId": "SC2wWZSjiBaKluGJKDJIV6nFtEoHi",
         "type": "screen",
         "view": {
-          "x": 3660,
-          "y": 204
+          "x": 5112,
+          "y": 252
         }
       },
       "9": {
@@ -607,8 +1169,8 @@
         },
         "type": "automated",
         "view": {
-          "x": 4140,
-          "y": 228
+          "x": 5592,
+          "y": 276
         }
       },
       "start": {
@@ -617,7 +1179,6 @@
         "next": {
           "rules": [
             {
-              "interactionId": "",
               "taskId": "12"
             }
           ]
@@ -631,7 +1192,7 @@
   },
   "flowId": "sign-up",
   "metadata": {
-    "componentsVersion": "2.0.513",
+    "componentsVersion": "2.0.516",
     "description": "Sign up using social login only. Registration information includes full name.",
     "name": "Sign Up",
     "sharedInteractions": [
@@ -1710,7 +2271,7 @@
           "parent": "ROOT",
           "props": {
             "align": "center",
-            "children": "First, we need to find you in our membership list. You can register with either your Member ID number or your social security number.\n\n\n\nWhich ID type would you like to use?\n\n",
+            "children": "First, we need to find you in our membership list. You can register with either your Member ID number or your social security number.\n\nWhich ID type would you like to use?\n\n",
             "full-width": false,
             "id": "0GPnvJBlvR",
             "isEnriched": true,
@@ -1747,25 +2308,6 @@
             "resolvedName": "ErrorMessage"
           }
         },
-        "BU7ndH7P1P": {
-          "custom": {},
-          "displayName": "Image",
-          "hidden": false,
-          "isCanvas": false,
-          "linkedNodes": {},
-          "nodes": [],
-          "parent": "YcFfVtac6I",
-          "props": {
-            "alt": "Image",
-            "height": "30px",
-            "id": "BU7ndH7P1P",
-            "src": "/images/1c9d8aabd88dbf5e8eb3.png",
-            "width": "30px"
-          },
-          "type": {
-            "resolvedName": "Image"
-          }
-        },
         "LmrSIGOWZb": {
           "custom": {},
           "displayName": "Text",
@@ -1799,7 +2341,6 @@
           "nodes": [
             "LmrSIGOWZb",
             "0GPnvJBlvR",
-            "lRl-MYwqjZ",
             "WRoTINR4HT",
             "tkOlu93qRF",
             "1sMmkeVxVT"
@@ -1852,7 +2393,7 @@
             "id": "WRoTINR4HT",
             "label": "Select ID Type",
             "label-type": "floating",
-            "name": "",
+            "name": "form.idType",
             "placeholder": "",
             "required": false,
             "size": "md",
@@ -1860,62 +2401,6 @@
           },
           "type": {
             "resolvedName": "SingleSelect"
-          }
-        },
-        "YcFfVtac6I": {
-          "custom": {},
-          "displayName": "Container",
-          "hidden": false,
-          "isCanvas": true,
-          "linkedNodes": {},
-          "nodes": [
-            "BU7ndH7P1P",
-            "uoUEBaL2Wh"
-          ],
-          "parent": "lRl-MYwqjZ",
-          "props": {
-            "align": "center",
-            "background": "#ffffff00",
-            "data-editor-type": "container",
-            "direction": "row",
-            "id": "YcFfVtac6I",
-            "justify": "start",
-            "paddingX": "4",
-            "paddingY": "1",
-            "spaceBetween": "4",
-            "st-items-grow": 0,
-            "width": "100%"
-          },
-          "type": {
-            "resolvedName": "Container"
-          }
-        },
-        "lRl-MYwqjZ": {
-          "custom": {},
-          "displayName": "Container",
-          "hidden": false,
-          "isCanvas": true,
-          "linkedNodes": {},
-          "nodes": [
-            "YcFfVtac6I"
-          ],
-          "parent": "ROOT",
-          "props": {
-            "align": "start",
-            "background": "#CECECEFF",
-            "backgroundImageUrl": "",
-            "data-editor-type": "container",
-            "direction": "row",
-            "id": "lRl-MYwqjZ",
-            "justify": "start",
-            "paddingX": "3",
-            "paddingY": "3",
-            "spaceBetween": "4",
-            "st-items-grow": 0,
-            "width": "100%"
-          },
-          "type": {
-            "resolvedName": "Container"
           }
         },
         "tkOlu93qRF": {
@@ -1941,29 +2426,6 @@
           },
           "type": {
             "resolvedName": "Button"
-          }
-        },
-        "uoUEBaL2Wh": {
-          "custom": {},
-          "displayName": "Text",
-          "hidden": false,
-          "isCanvas": false,
-          "linkedNodes": {},
-          "nodes": [],
-          "parent": "YcFfVtac6I",
-          "props": {
-            "children": "Blue Shield Medicare members must use Member ID to register\n\n",
-            "full-width": false,
-            "id": "uoUEBaL2Wh",
-            "isEnriched": true,
-            "italic": false,
-            "link-target-blank": true,
-            "mode": "primary",
-            "text-align": "center",
-            "variant": "body1"
-          },
-          "type": {
-            "resolvedName": "Text"
           }
         }
       },
@@ -2008,7 +2470,8 @@
           "linkedNodes": {},
           "nodes": [
             "LmrSIGOWZb",
-            "f8ScpiFhev"
+            "f8ScpiFhev",
+            "_FMR9S3Sld"
           ],
           "parent": "ROOT",
           "props": {
@@ -2080,6 +2543,29 @@
             "resolvedName": "Container"
           }
         },
+        "_FMR9S3Sld": {
+          "custom": {},
+          "displayName": "Link",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "2KsaYsI_cB",
+          "props": {
+            "children": "Sign In Page",
+            "full-width": false,
+            "href": "{{device.location.origin}}/#/login",
+            "id": "_FMR9S3Sld",
+            "italic": false,
+            "mode": "primary",
+            "target": "_blank",
+            "text-align": "center",
+            "variant": "body1"
+          },
+          "type": {
+            "resolvedName": "Link"
+          }
+        },
         "f8ScpiFhev": {
           "custom": {},
           "displayName": "Text",
@@ -2089,7 +2575,7 @@
           "nodes": [],
           "parent": "2KsaYsI_cB",
           "props": {
-            "children": "Please [sign in](http://localhost:4200/login) instead\n\n",
+            "children": "Click on the link below to sign in\n\n",
             "full-width": false,
             "id": "f8ScpiFhev",
             "isEnriched": true,
@@ -2104,6 +2590,7 @@
           }
         }
       },
+      "interactions": [],
       "screenId": "SC2wZLerQxcJts1otg9c8mriMJFeT"
     },
     {
@@ -2262,6 +2749,591 @@
         }
       ],
       "screenId": "SC2wZM1Qlbhs7x5EhKGep9TjVi5vD"
+    },
+    {
+      "contents": {
+        "0GPnvJBlvR": {
+          "custom": {},
+          "displayName": "Text",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "align": "center",
+            "children": "First, we need to find you in our membership list. You can register with your Member ID\n\n",
+            "full-width": false,
+            "id": "0GPnvJBlvR",
+            "isEnriched": true,
+            "italic": false,
+            "link-target-blank": true,
+            "mode": "primary",
+            "text-align": "left",
+            "variant": "subtitle2"
+          },
+          "type": {
+            "resolvedName": "Text"
+          }
+        },
+        "1sMmkeVxVT": {
+          "custom": {},
+          "displayName": "Error Message",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "align": "center",
+            "data-type": "error-message",
+            "full-width": false,
+            "id": "1sMmkeVxVT",
+            "italic": false,
+            "link-target-blank": true,
+            "mode": "error",
+            "text-align": "center",
+            "variant": "body1"
+          },
+          "type": {
+            "resolvedName": "ErrorMessage"
+          }
+        },
+        "LmrSIGOWZb": {
+          "custom": {},
+          "displayName": "Text",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "align": "center",
+            "children": "\u003cb\u003eEnter Member ID\u003c/b\u003e\n\n",
+            "full-width": false,
+            "id": "LmrSIGOWZb",
+            "isEnriched": true,
+            "italic": false,
+            "link-target-blank": true,
+            "mode": "primary",
+            "text-align": "center",
+            "variant": "h2"
+          },
+          "type": {
+            "resolvedName": "Text"
+          }
+        },
+        "ROOT": {
+          "custom": {},
+          "displayName": "Container",
+          "hidden": false,
+          "isCanvas": true,
+          "linkedNodes": {},
+          "nodes": [
+            "LmrSIGOWZb",
+            "0GPnvJBlvR",
+            "_x7aOLjqks",
+            "tkOlu93qRF",
+            "1sMmkeVxVT"
+          ],
+          "props": {
+            "align": "center",
+            "background": "",
+            "data-editor-type": "container",
+            "direction": "column",
+            "id": "ROOT",
+            "justify": "center",
+            "paddingX": "4",
+            "paddingY": "8",
+            "space-between": "md",
+            "spaceBetween": "4",
+            "st-items-grow": 0,
+            "width": "100%"
+          },
+          "type": {
+            "resolvedName": "Container"
+          }
+        },
+        "_x7aOLjqks": {
+          "custom": {
+            "type": "input"
+          },
+          "displayName": "Input",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "bordered": true,
+            "copyToClipboard": false,
+            "data-errormessage-value-missing": "Please fill out this field.",
+            "full-width": true,
+            "id": "_x7aOLjqks",
+            "label": "Member ID",
+            "label-type": "floating",
+            "max": 100,
+            "name": "form.memberId",
+            "placeholder": "",
+            "required": false,
+            "size": "md"
+          },
+          "type": {
+            "resolvedName": "ContextKeyInput"
+          }
+        },
+        "tkOlu93qRF": {
+          "custom": {
+            "type": "button"
+          },
+          "displayName": "Button",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "children": "Submit",
+            "color": "primary",
+            "data-type": "button",
+            "formNoValidate": false,
+            "full-width": false,
+            "id": "tkOlu93qRF",
+            "shape": "",
+            "size": "md",
+            "variant": "contained"
+          },
+          "type": {
+            "resolvedName": "Button"
+          }
+        }
+      },
+      "interactions": [
+        {
+          "id": "tkOlu93qRF",
+          "label": "Submit"
+        }
+      ],
+      "screenId": "SC2wfTzh4BqchCaXNdDYCfD3KZy7G"
+    },
+    {
+      "contents": {
+        "0GPnvJBlvR": {
+          "custom": {},
+          "displayName": "Text",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "align": "center",
+            "children": "First, we need to find you in our membership list. You can register with your SSN\n\n",
+            "full-width": false,
+            "id": "0GPnvJBlvR",
+            "isEnriched": true,
+            "italic": false,
+            "link-target-blank": true,
+            "mode": "primary",
+            "text-align": "left",
+            "variant": "subtitle2"
+          },
+          "type": {
+            "resolvedName": "Text"
+          }
+        },
+        "1sMmkeVxVT": {
+          "custom": {},
+          "displayName": "Error Message",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "align": "center",
+            "data-type": "error-message",
+            "full-width": false,
+            "id": "1sMmkeVxVT",
+            "italic": false,
+            "link-target-blank": true,
+            "mode": "error",
+            "text-align": "center",
+            "variant": "body1"
+          },
+          "type": {
+            "resolvedName": "ErrorMessage"
+          }
+        },
+        "LmrSIGOWZb": {
+          "custom": {},
+          "displayName": "Text",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "align": "center",
+            "children": "\u003cb\u003eEnter SSN\u003c/b\u003e\n\n",
+            "full-width": false,
+            "id": "LmrSIGOWZb",
+            "isEnriched": true,
+            "italic": false,
+            "link-target-blank": true,
+            "mode": "primary",
+            "text-align": "center",
+            "variant": "h2"
+          },
+          "type": {
+            "resolvedName": "Text"
+          }
+        },
+        "ROOT": {
+          "custom": {},
+          "displayName": "Container",
+          "hidden": false,
+          "isCanvas": true,
+          "linkedNodes": {},
+          "nodes": [
+            "LmrSIGOWZb",
+            "0GPnvJBlvR",
+            "_x7aOLjqks",
+            "tkOlu93qRF",
+            "1sMmkeVxVT"
+          ],
+          "props": {
+            "align": "center",
+            "background": "",
+            "data-editor-type": "container",
+            "direction": "column",
+            "id": "ROOT",
+            "justify": "center",
+            "paddingX": "4",
+            "paddingY": "8",
+            "space-between": "md",
+            "spaceBetween": "4",
+            "st-items-grow": 0,
+            "width": "100%"
+          },
+          "type": {
+            "resolvedName": "Container"
+          }
+        },
+        "_x7aOLjqks": {
+          "custom": {
+            "type": "input"
+          },
+          "displayName": "Input",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "bordered": true,
+            "copyToClipboard": false,
+            "data-errormessage-value-missing": "Please fill out this field.",
+            "full-width": true,
+            "id": "_x7aOLjqks",
+            "label": "Social Security Number",
+            "label-type": "floating",
+            "max": 100,
+            "name": "form.ssn",
+            "placeholder": "",
+            "required": false,
+            "size": "md"
+          },
+          "type": {
+            "resolvedName": "ContextKeyInput"
+          }
+        },
+        "tkOlu93qRF": {
+          "custom": {
+            "type": "button"
+          },
+          "displayName": "Button",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "children": "Submit",
+            "color": "primary",
+            "data-type": "button",
+            "formNoValidate": false,
+            "full-width": false,
+            "id": "tkOlu93qRF",
+            "shape": "",
+            "size": "md",
+            "variant": "contained"
+          },
+          "type": {
+            "resolvedName": "Button"
+          }
+        }
+      },
+      "interactions": [
+        {
+          "id": "tkOlu93qRF",
+          "label": "Submit"
+        }
+      ],
+      "screenId": "SC2wfTzmbKJt67dBM6bp7BIafzADz"
+    },
+    {
+      "contents": {
+        "DXq_0gHzfB": {
+          "custom": {
+            "type": "input"
+          },
+          "displayName": "Email Input",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "bordered": true,
+            "copy-to-clipboard": false,
+            "data-errormessage-pattern-mismatch": "Must be a valid email",
+            "data-errormessage-value-missing": "Please fill out this field.",
+            "external-input": false,
+            "full-width": true,
+            "id": "DXq_0gHzfB",
+            "label": "Email",
+            "label-type": "floating",
+            "max": 100,
+            "name": "email",
+            "pattern": "^[\\w\\.\\%\\+\\-']+@[\\w\\.\\-]+\\.[A-Za-z]{2,}$",
+            "placeholder": "",
+            "required": false,
+            "size": "md",
+            "type": "email"
+          },
+          "type": {
+            "resolvedName": "EmailInput"
+          }
+        },
+        "E4z_zdKAmI": {
+          "custom": {},
+          "displayName": "Error Message",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "data-type": "error-message",
+            "full-width": false,
+            "hide-when-empty": true,
+            "id": "E4z_zdKAmI",
+            "italic": false,
+            "link-target-blank": true,
+            "mode": "error",
+            "text-align": "center",
+            "variant": "body1"
+          },
+          "type": {
+            "resolvedName": "ErrorMessage"
+          }
+        },
+        "FFZJmFsDd2": {
+          "custom": {
+            "type": "button"
+          },
+          "displayName": "Button",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "children": "Continue",
+            "color": "primary",
+            "data-type": "button",
+            "formNoValidate": false,
+            "full-width": false,
+            "id": "FFZJmFsDd2",
+            "shape": "",
+            "size": "md",
+            "variant": "contained"
+          },
+          "type": {
+            "resolvedName": "Button"
+          }
+        },
+        "ROOT": {
+          "custom": {},
+          "displayName": "Container",
+          "hidden": false,
+          "isCanvas": true,
+          "linkedNodes": {},
+          "nodes": [
+            "rtdXbfrPXg",
+            "ZBElLXmDzH",
+            "h5ZrSuvhd-",
+            "DXq_0gHzfB",
+            "wjBpm43fV0",
+            "eSqkMrgaRY",
+            "FFZJmFsDd2",
+            "E4z_zdKAmI"
+          ],
+          "props": {
+            "align": "center",
+            "background": "",
+            "data-editor-type": "container",
+            "direction": "column",
+            "id": "ROOT",
+            "justify": "center",
+            "paddingX": "4",
+            "paddingY": "8",
+            "spaceBetween": "4",
+            "st-items-grow": 0,
+            "width": "100%"
+          },
+          "type": {
+            "resolvedName": "Container"
+          }
+        },
+        "ZBElLXmDzH": {
+          "custom": {},
+          "displayName": "Text",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "children": "Welcome Member #{{form.memberId}}\n\n",
+            "full-width": false,
+            "id": "ZBElLXmDzH",
+            "isEnriched": true,
+            "italic": false,
+            "link-target-blank": true,
+            "mode": "primary",
+            "text-align": "center",
+            "variant": "h3"
+          },
+          "type": {
+            "resolvedName": "Text"
+          }
+        },
+        "eSqkMrgaRY": {
+          "custom": {
+            "contextKey": "familyName",
+            "type": "input"
+          },
+          "displayName": "Last Name Input",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "bordered": true,
+            "copy-to-clipboard": false,
+            "data-errormessage-value-missing": "Please fill out this field.",
+            "full-width": true,
+            "id": "eSqkMrgaRY",
+            "label": "Last Name",
+            "label-type": "floating",
+            "max": 100,
+            "name": "lastName",
+            "placeholder": "",
+            "required": false,
+            "size": "md",
+            "type": "text"
+          },
+          "type": {
+            "resolvedName": "LastNameInput"
+          }
+        },
+        "h5ZrSuvhd-": {
+          "custom": {
+            "type": "input"
+          },
+          "displayName": "Custom Login ID Input",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "bordered": true,
+            "copy-to-clipboard": false,
+            "data-errormessage-value-missing": "Please fill out this field.",
+            "full-width": true,
+            "id": "h5ZrSuvhd-",
+            "label": "Username",
+            "label-type": "floating",
+            "max": 100,
+            "name": "externalId",
+            "placeholder": "",
+            "required": false,
+            "size": "md",
+            "type": "text"
+          },
+          "type": {
+            "resolvedName": "CustomIdentifierInput"
+          }
+        },
+        "rtdXbfrPXg": {
+          "custom": {},
+          "displayName": "Logo",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "alt": "Logo",
+            "height": "100px",
+            "id": "rtdXbfrPXg"
+          },
+          "type": {
+            "resolvedName": "Logo"
+          }
+        },
+        "wjBpm43fV0": {
+          "custom": {
+            "contextKey": "givenName",
+            "type": "input"
+          },
+          "displayName": "First Name Input",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "bordered": true,
+            "copy-to-clipboard": false,
+            "data-errormessage-value-missing": "Please fill out this field.",
+            "full-width": true,
+            "id": "wjBpm43fV0",
+            "label": "First Name",
+            "label-type": "floating",
+            "max": 100,
+            "name": "firstName",
+            "placeholder": "",
+            "required": false,
+            "size": "md",
+            "type": "text"
+          },
+          "type": {
+            "resolvedName": "FirstNameInput"
+          }
+        }
+      },
+      "interactions": [
+        {
+          "id": "FFZJmFsDd2",
+          "label": "Continue"
+        }
+      ],
+      "screenId": "SC2wfUOyR77W0XiAVzZURAormUAG9"
     }
   ]
 }
