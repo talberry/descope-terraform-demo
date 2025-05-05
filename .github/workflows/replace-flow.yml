@@ -16,14 +16,42 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Install Descope CLI
+        uses: descope/descopecli/.github/actions/install@main
+        with:
+          version: "v0.8.11"
+
       - name: Export Flows from Staging
         id: export
-        uses: descope/descopecli/.github/actions/export@v0.8.11
-        with:
-          project_id: ${{ vars.STAGING_PROJECT_ID }}
-          management_key: ${{ secrets.DESCOPE_MGMT_KEY }}
-          files_path: ${{ env.FILES_PATH }}
-          include: flows
+        shell: bash
+        env:
+          DESCOPE_MANAGEMENT_KEY: ${{ secrets.DESCOPE_MGMT_KEY }}
+        run: |
+          echo "Exporting flows"
+          mkdir -p "${{ env.FILES_PATH }}"
+          CHANGES_FILE=$(mktemp)
+
+          # Export sign up or in flow
+          descope flow export sign-up-or-in "${{ env.FILES_PATH }}"
+
+          # Export sign in flow
+          descope flow export sign-in "${{ env.FILES_PATH }}"
+
+          # Export sign up flow
+          descope flow export sign-up "${{ env.FILES_PATH }}"
+
+          # Check for changes
+          if [ -n "$(git status --porcelain=v1 2> /dev/null)" ]; then
+            git add "${{ env.FILES_PATH }}"
+            git diff HEAD --name-only > $CHANGES_FILE
+            git reset HEAD
+            echo "Changed files:"
+            cat $CHANGES_FILE | sed -e 's|^|  - |'
+            echo "changes_file=$CHANGES_FILE" >> $GITHUB_OUTPUT
+          else
+            echo "No files were changed"
+            echo "changes_file=" >> $GITHUB_OUTPUT
+          fi
 
       - name: Cancel if No Changes
         if: steps.export.outputs.changes_file == ''
