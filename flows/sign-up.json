@@ -17,24 +17,6 @@
           "externalId",
           "firstName"
         ],
-        "inputsMetadata": [
-          {
-            "displayName": "Email Input",
-            "key": "email"
-          },
-          {
-            "displayName": "Last Name Input",
-            "key": "lastName"
-          },
-          {
-            "displayName": "Custom Login ID Input",
-            "key": "externalId"
-          },
-          {
-            "displayName": "First Name Input",
-            "key": "firstName"
-          }
-        ],
         "name": "Registration with SSN",
         "next": {
           "rules": [
@@ -54,7 +36,6 @@
       "10": {
         "calculatedInputKeys": true,
         "id": "10",
-        "inputsMetadata": [],
         "name": "Success",
         "next": {
           "rules": [
@@ -104,7 +85,7 @@
           },
           "connectorId": {
             "type": "inline",
-            "value": "CI2waxTiEoQmzxJZaLv8Fzta2Q98m"
+            "value": "CI2wYdYv29QMIXTv6bGoV6Odo9c7Y"
           },
           "resultPath": {
             "type": "inline",
@@ -144,190 +125,13 @@
         }
       },
       "12": {
-        "allInputKeys": [],
+        "allInputKeys": [
+          "form.idType"
+        ],
         "calculatedInputKeys": true,
-        "clientScripts": [],
-        "componentsConnectors": {},
-        "dynamicSelects": {},
-        "htmlTemplate": {
-          "0GPnvJBlvR": {
-            "custom": {},
-            "displayName": "Text",
-            "hidden": false,
-            "isCanvas": false,
-            "linkedNodes": {},
-            "nodes": [],
-            "parent": "ROOT",
-            "props": {
-              "align": "center",
-              "children": "First, we need to find you in our membership list. You can register with either your Member ID number or your social security number.\n\nWhich ID type would you like to use?\n\nTEST\n\n",
-              "full-width": false,
-              "id": "0GPnvJBlvR",
-              "isEnriched": true,
-              "italic": false,
-              "link-target-blank": true,
-              "mode": "primary",
-              "text-align": "left",
-              "variant": "subtitle2"
-            },
-            "type": {
-              "resolvedName": "Text"
-            }
-          },
-          "1sMmkeVxVT": {
-            "custom": {},
-            "displayName": "Error Message",
-            "hidden": false,
-            "isCanvas": false,
-            "linkedNodes": {},
-            "nodes": [],
-            "parent": "ROOT",
-            "props": {
-              "align": "center",
-              "data-type": "error-message",
-              "full-width": false,
-              "id": "1sMmkeVxVT",
-              "italic": false,
-              "link-target-blank": true,
-              "mode": "error",
-              "text-align": "center",
-              "variant": "body1"
-            },
-            "type": {
-              "resolvedName": "ErrorMessage"
-            }
-          },
-          "LmrSIGOWZb": {
-            "custom": {},
-            "displayName": "Text",
-            "hidden": false,
-            "isCanvas": false,
-            "linkedNodes": {},
-            "nodes": [],
-            "parent": "ROOT",
-            "props": {
-              "align": "center",
-              "children": "\u003cb\u003eRegister Online\u003c/b\u003e\n\n",
-              "full-width": false,
-              "id": "LmrSIGOWZb",
-              "isEnriched": true,
-              "italic": false,
-              "link-target-blank": true,
-              "mode": "primary",
-              "text-align": "center",
-              "variant": "h2"
-            },
-            "type": {
-              "resolvedName": "Text"
-            }
-          },
-          "ROOT": {
-            "custom": {},
-            "displayName": "Container",
-            "hidden": false,
-            "isCanvas": true,
-            "linkedNodes": {},
-            "nodes": [
-              "LmrSIGOWZb",
-              "0GPnvJBlvR",
-              "WRoTINR4HT",
-              "tkOlu93qRF",
-              "1sMmkeVxVT"
-            ],
-            "props": {
-              "align": "center",
-              "background": "",
-              "data-editor-type": "container",
-              "direction": "column",
-              "id": "ROOT",
-              "justify": "center",
-              "paddingX": "4",
-              "paddingY": "8",
-              "space-between": "md",
-              "spaceBetween": "4",
-              "st-items-grow": 0,
-              "width": "100%"
-            },
-            "type": {
-              "resolvedName": "Container"
-            }
-          },
-          "WRoTINR4HT": {
-            "custom": {
-              "type": "input"
-            },
-            "displayName": "Single Select",
-            "hidden": false,
-            "isCanvas": false,
-            "linkedNodes": {},
-            "nodes": [],
-            "parent": "ROOT",
-            "props": {
-              "allowClearValue": true,
-              "bordered": true,
-              "data": [
-                {
-                  "label": "Member ID",
-                  "value": "Member ID"
-                },
-                {
-                  "label": "Social security number",
-                  "value": "Social security number"
-                }
-              ],
-              "data-errormessage-value-missing": "Please fill out this field.",
-              "data-has-dynamic-attr-values": true,
-              "default-value": "Member ID",
-              "full-width": true,
-              "id": "WRoTINR4HT",
-              "label": "Select ID Type",
-              "label-type": "floating",
-              "name": "",
-              "placeholder": "",
-              "required": false,
-              "size": "md",
-              "variant": "combobox"
-            },
-            "type": {
-              "resolvedName": "SingleSelect"
-            }
-          },
-          "tkOlu93qRF": {
-            "custom": {
-              "type": "button"
-            },
-            "displayName": "Button",
-            "hidden": false,
-            "isCanvas": false,
-            "linkedNodes": {},
-            "nodes": [],
-            "parent": "ROOT",
-            "props": {
-              "children": "Find me",
-              "color": "primary",
-              "data-type": "button",
-              "formNoValidate": false,
-              "full-width": false,
-              "id": "tkOlu93qRF",
-              "shape": "",
-              "size": "md",
-              "variant": "contained"
-            },
-            "type": {
-              "resolvedName": "Button"
-            }
-          }
-        },
         "id": "12",
         "inputKeys": [
-          ""
-        ],
-        "inputsMetadata": [],
-        "interactions": [
-          {
-            "id": "tkOlu93qRF",
-            "label": "Find me"
-          }
+          "form.idType"
         ],
         "name": "Registration Screen",
         "next": {
@@ -354,12 +158,6 @@
         "inputKeys": [
           "form.mfaMethod"
         ],
-        "inputsMetadata": [
-          {
-            "displayName": "Single Select",
-            "key": "form.mfaMethod"
-          }
-        ],
         "name": "MFA Selection Screen",
         "next": {
           "rules": [
@@ -381,14 +179,14 @@
           {
             "atomicConditions": [
               {
-                "operator": "empty",
+                "operator": "is-true",
                 "predicate": {
                   "type": "inline",
                   "value": ""
                 },
                 "target": {
                   "type": "context",
-                  "value": "unauthUser.loginIds"
+                  "value": "authInfo.firstSeen"
                 }
               }
             ],
@@ -396,10 +194,12 @@
             "name": "New User"
           },
           {
+            "atomicConditions": [],
             "interactionId": "ELSE",
             "name": "Existing User"
           }
         ],
+        "errorHandlingV2": {},
         "id": "14",
         "name": "Is this a new user?",
         "next": {
@@ -423,7 +223,6 @@
       "15": {
         "calculatedInputKeys": true,
         "id": "15",
-        "inputsMetadata": [],
         "name": "Already Enrolled Screen",
         "next": {},
         "screenId": "SC2wZLerQxcJts1otg9c8mriMJFeT",
@@ -565,12 +364,6 @@
         ],
         "calculatedInputKeys": true,
         "id": "19",
-        "inputsMetadata": [
-          {
-            "displayName": "One Time Code",
-            "key": "code"
-          }
-        ],
         "name": "Verify TOTP",
         "next": {
           "rules": [
@@ -670,11 +463,11 @@
           "rules": [
             {
               "interactionId": "hrwlb289v9",
-              "taskId": "29"
+              "taskId": "33"
             },
             {
               "interactionId": "ELSE",
-              "taskId": "30"
+              "taskId": "34"
             }
           ]
         },
@@ -717,7 +510,7 @@
           },
           "connectorId": {
             "type": "inline",
-            "value": "CI2waxTiEoQmzxJZaLv8Fzta2Q98m"
+            "value": "CI2wYdYv29QMIXTv6bGoV6Odo9c7Y"
           },
           "resultPath": {
             "type": "inline",
@@ -756,33 +549,6 @@
           "y": 48
         }
       },
-      "24": {
-        "allInputKeys": [
-          "email",
-          "lastName",
-          "externalId",
-          "firstName"
-        ],
-        "calculatedInputKeys": true,
-        "contextKeys": [
-          "form.memberId"
-        ],
-        "id": "24",
-        "inputKeys": [
-          "email",
-          "lastName",
-          "externalId",
-          "firstName"
-        ],
-        "name": "Registration with Member ID",
-        "next": {},
-        "screenId": "SC2wf1OxY3h2C9Xag4Q29VadlL9gz",
-        "type": "screen",
-        "view": {
-          "x": 3180,
-          "y": 120
-        }
-      },
       "25": {
         "calculatedInputKeys": true,
         "id": "25",
@@ -800,14 +566,14 @@
           {
             "atomicConditions": [
               {
-                "operator": "empty",
+                "operator": "is-true",
                 "predicate": {
                   "type": "inline",
                   "value": ""
                 },
                 "target": {
                   "type": "context",
-                  "value": "unauthUser.loginIds"
+                  "value": "authInfo.firstSeen"
                 }
               }
             ],
@@ -815,17 +581,19 @@
             "name": "New User"
           },
           {
+            "atomicConditions": [],
             "interactionId": "ELSE",
             "name": "Existing User"
           }
         ],
+        "errorHandlingV2": {},
         "id": "26",
         "name": "Is this a new user?",
         "next": {
           "rules": [
             {
               "interactionId": "a4aqa17y2nw",
-              "taskId": "24"
+              "taskId": "35"
             },
             {
               "interactionId": "ELSE",
@@ -837,36 +605,6 @@
         "view": {
           "x": 2688,
           "y": 84
-        }
-      },
-      "29": {
-        "calculatedInputKeys": true,
-        "id": "29",
-        "name": "Member ID Input Screen",
-        "next": {},
-        "screenId": "SC2wfGeBiustvsAPDO9QTlsLP30qz",
-        "type": "screen",
-        "view": {
-          "x": 1236,
-          "y": 48
-        }
-      },
-      "30": {
-        "allInputKeys": [
-          "form.memberId"
-        ],
-        "calculatedInputKeys": true,
-        "id": "30",
-        "inputKeys": [
-          "form.memberId"
-        ],
-        "name": "SSN Input Screen",
-        "next": {},
-        "screenId": "SC2wfGiL4r1AJZXOSouh6QnbvOXb4",
-        "type": "screen",
-        "view": {
-          "x": 1236,
-          "y": 336
         }
       },
       "31": {
@@ -975,6 +713,90 @@
           "y": 516
         }
       },
+      "33": {
+        "allInputKeys": [
+          "form.memberId"
+        ],
+        "calculatedInputKeys": true,
+        "id": "33",
+        "inputKeys": [
+          "form.memberId"
+        ],
+        "name": "Member ID Input Screen",
+        "next": {
+          "rules": [
+            {
+              "interactionId": "tkOlu93qRF",
+              "taskId": "23"
+            }
+          ]
+        },
+        "screenId": "SC2wfTzh4BqchCaXNdDYCfD3KZy7G",
+        "type": "screen",
+        "view": {
+          "x": 1236,
+          "y": 48
+        }
+      },
+      "34": {
+        "allInputKeys": [
+          "form.ssn"
+        ],
+        "calculatedInputKeys": true,
+        "id": "34",
+        "inputKeys": [
+          "form.ssn"
+        ],
+        "name": "SSN Input Screen",
+        "next": {
+          "rules": [
+            {
+              "interactionId": "tkOlu93qRF",
+              "taskId": "11"
+            }
+          ]
+        },
+        "screenId": "SC2wfTzmbKJt67dBM6bp7BIafzADz",
+        "type": "screen",
+        "view": {
+          "x": 1236,
+          "y": 336
+        }
+      },
+      "35": {
+        "allInputKeys": [
+          "email",
+          "lastName",
+          "externalId",
+          "firstName"
+        ],
+        "calculatedInputKeys": true,
+        "contextKeys": [
+          "form.memberId"
+        ],
+        "id": "35",
+        "inputKeys": [
+          "email",
+          "lastName",
+          "externalId",
+          "firstName"
+        ],
+        "name": "Registration with Member ID",
+        "next": {
+          "rules": [
+            {
+              "interactionId": "FFZJmFsDd2",
+              "taskId": "5"
+            }
+          ]
+        },
+        "screenId": "SC2wfUOyR77W0XiAVzZURAormUAG9",
+        "type": "screen",
+        "view": {
+          "x": 3180,
+          "y": 120
+        }
+      },
       "4": {
         "action": "logged-in",
         "id": "4",
@@ -1027,12 +849,6 @@
           "sentTo.maskedEmail"
         ],
         "id": "6",
-        "inputsMetadata": [
-          {
-            "displayName": "One Time Code",
-            "key": "code"
-          }
-        ],
         "name": "Verify OTP",
         "next": {
           "rules": [
@@ -1082,12 +898,6 @@
         "id": "8",
         "inputKeys": [
           "newPassword"
-        ],
-        "inputsMetadata": [
-          {
-            "displayName": "New Password",
-            "key": "newPassword"
-          }
         ],
         "name": "Create Password",
         "next": {
@@ -1151,6 +961,11 @@
         "type": "success"
       }
     ]
+  },
+  "references": {
+    "connectors": {
+      "Radiant Logic": "CI2wYdYv29QMIXTv6bGoV6Odo9c7Y"
+    }
   },
   "screens": [
     {
@@ -2216,7 +2031,7 @@
           "parent": "ROOT",
           "props": {
             "align": "center",
-            "children": "First, we need to find you in our membership list. You can register with either your Member ID number or your social security number.\n\nWhich ID type would you like to use?\n\nTEST\n\n",
+            "children": "First, we need to find you in our membership list. You can register with either your Member ID number or your social security number.\n\nWhich ID type would you like to use?\n\n",
             "full-width": false,
             "id": "0GPnvJBlvR",
             "isEnriched": true,
@@ -2338,7 +2153,7 @@
             "id": "WRoTINR4HT",
             "label": "Select ID Type",
             "label-type": "floating",
-            "name": "",
+            "name": "form.idType",
             "placeholder": "",
             "required": false,
             "size": "md",
@@ -2673,6 +2488,30 @@
     },
     {
       "contents": {
+        "0GPnvJBlvR": {
+          "custom": {},
+          "displayName": "Text",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "align": "center",
+            "children": "First, we need to find you in our membership list. You can register with your Member ID\n\n",
+            "full-width": false,
+            "id": "0GPnvJBlvR",
+            "isEnriched": true,
+            "italic": false,
+            "link-target-blank": true,
+            "mode": "primary",
+            "text-align": "left",
+            "variant": "subtitle2"
+          },
+          "type": {
+            "resolvedName": "Text"
+          }
+        },
         "1sMmkeVxVT": {
           "custom": {},
           "displayName": "Error Message",
@@ -2706,7 +2545,7 @@
           "parent": "ROOT",
           "props": {
             "align": "center",
-            "children": "sadfasdf\n\n",
+            "children": "\u003cb\u003eEnter Member ID\u003c/b\u003e\n\n",
             "full-width": false,
             "id": "LmrSIGOWZb",
             "isEnriched": true,
@@ -2714,7 +2553,7 @@
             "link-target-blank": true,
             "mode": "primary",
             "text-align": "center",
-            "variant": "body1"
+            "variant": "h2"
           },
           "type": {
             "resolvedName": "Text"
@@ -2728,6 +2567,9 @@
           "linkedNodes": {},
           "nodes": [
             "LmrSIGOWZb",
+            "0GPnvJBlvR",
+            "_x7aOLjqks",
+            "tkOlu93qRF",
             "1sMmkeVxVT"
           ],
           "props": {
@@ -2747,10 +2589,487 @@
           "type": {
             "resolvedName": "Container"
           }
+        },
+        "_x7aOLjqks": {
+          "custom": {
+            "type": "input"
+          },
+          "displayName": "Input",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "bordered": true,
+            "copyToClipboard": false,
+            "data-errormessage-value-missing": "Please fill out this field.",
+            "full-width": true,
+            "id": "_x7aOLjqks",
+            "label": "Member ID",
+            "label-type": "floating",
+            "max": 100,
+            "name": "form.memberId",
+            "placeholder": "",
+            "required": false,
+            "size": "md"
+          },
+          "type": {
+            "resolvedName": "ContextKeyInput"
+          }
+        },
+        "tkOlu93qRF": {
+          "custom": {
+            "type": "button"
+          },
+          "displayName": "Button",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "children": "Submit",
+            "color": "primary",
+            "data-type": "button",
+            "formNoValidate": false,
+            "full-width": false,
+            "id": "tkOlu93qRF",
+            "shape": "",
+            "size": "md",
+            "variant": "contained"
+          },
+          "type": {
+            "resolvedName": "Button"
+          }
         }
       },
-      "interactions": [],
-      "screenId": "SC2wfGeBiustvsAPDO9QTlsLP30qz"
+      "interactions": [
+        {
+          "id": "tkOlu93qRF",
+          "label": "Submit"
+        }
+      ],
+      "screenId": "SC2wfTzh4BqchCaXNdDYCfD3KZy7G"
+    },
+    {
+      "contents": {
+        "0GPnvJBlvR": {
+          "custom": {},
+          "displayName": "Text",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "align": "center",
+            "children": "First, we need to find you in our membership list. You can register with your SSN\n\n",
+            "full-width": false,
+            "id": "0GPnvJBlvR",
+            "isEnriched": true,
+            "italic": false,
+            "link-target-blank": true,
+            "mode": "primary",
+            "text-align": "left",
+            "variant": "subtitle2"
+          },
+          "type": {
+            "resolvedName": "Text"
+          }
+        },
+        "1sMmkeVxVT": {
+          "custom": {},
+          "displayName": "Error Message",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "align": "center",
+            "data-type": "error-message",
+            "full-width": false,
+            "id": "1sMmkeVxVT",
+            "italic": false,
+            "link-target-blank": true,
+            "mode": "error",
+            "text-align": "center",
+            "variant": "body1"
+          },
+          "type": {
+            "resolvedName": "ErrorMessage"
+          }
+        },
+        "LmrSIGOWZb": {
+          "custom": {},
+          "displayName": "Text",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "align": "center",
+            "children": "\u003cb\u003eEnter SSN\u003c/b\u003e\n\n",
+            "full-width": false,
+            "id": "LmrSIGOWZb",
+            "isEnriched": true,
+            "italic": false,
+            "link-target-blank": true,
+            "mode": "primary",
+            "text-align": "center",
+            "variant": "h2"
+          },
+          "type": {
+            "resolvedName": "Text"
+          }
+        },
+        "ROOT": {
+          "custom": {},
+          "displayName": "Container",
+          "hidden": false,
+          "isCanvas": true,
+          "linkedNodes": {},
+          "nodes": [
+            "LmrSIGOWZb",
+            "0GPnvJBlvR",
+            "_x7aOLjqks",
+            "tkOlu93qRF",
+            "1sMmkeVxVT"
+          ],
+          "props": {
+            "align": "center",
+            "background": "",
+            "data-editor-type": "container",
+            "direction": "column",
+            "id": "ROOT",
+            "justify": "center",
+            "paddingX": "4",
+            "paddingY": "8",
+            "space-between": "md",
+            "spaceBetween": "4",
+            "st-items-grow": 0,
+            "width": "100%"
+          },
+          "type": {
+            "resolvedName": "Container"
+          }
+        },
+        "_x7aOLjqks": {
+          "custom": {
+            "type": "input"
+          },
+          "displayName": "Input",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "bordered": true,
+            "copyToClipboard": false,
+            "data-errormessage-value-missing": "Please fill out this field.",
+            "full-width": true,
+            "id": "_x7aOLjqks",
+            "label": "Social Security Number",
+            "label-type": "floating",
+            "max": 100,
+            "name": "form.ssn",
+            "placeholder": "",
+            "required": false,
+            "size": "md"
+          },
+          "type": {
+            "resolvedName": "ContextKeyInput"
+          }
+        },
+        "tkOlu93qRF": {
+          "custom": {
+            "type": "button"
+          },
+          "displayName": "Button",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "children": "Submit",
+            "color": "primary",
+            "data-type": "button",
+            "formNoValidate": false,
+            "full-width": false,
+            "id": "tkOlu93qRF",
+            "shape": "",
+            "size": "md",
+            "variant": "contained"
+          },
+          "type": {
+            "resolvedName": "Button"
+          }
+        }
+      },
+      "interactions": [
+        {
+          "id": "tkOlu93qRF",
+          "label": "Submit"
+        }
+      ],
+      "screenId": "SC2wfTzmbKJt67dBM6bp7BIafzADz"
+    },
+    {
+      "contents": {
+        "DXq_0gHzfB": {
+          "custom": {
+            "type": "input"
+          },
+          "displayName": "Email Input",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "bordered": true,
+            "copy-to-clipboard": false,
+            "data-errormessage-pattern-mismatch": "Must be a valid email",
+            "data-errormessage-value-missing": "Please fill out this field.",
+            "external-input": false,
+            "full-width": true,
+            "id": "DXq_0gHzfB",
+            "label": "Email",
+            "label-type": "floating",
+            "max": 100,
+            "name": "email",
+            "pattern": "^[\\w\\.\\%\\+\\-']+@[\\w\\.\\-]+\\.[A-Za-z]{2,}$",
+            "placeholder": "",
+            "required": false,
+            "size": "md",
+            "type": "email"
+          },
+          "type": {
+            "resolvedName": "EmailInput"
+          }
+        },
+        "E4z_zdKAmI": {
+          "custom": {},
+          "displayName": "Error Message",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "data-type": "error-message",
+            "full-width": false,
+            "hide-when-empty": true,
+            "id": "E4z_zdKAmI",
+            "italic": false,
+            "link-target-blank": true,
+            "mode": "error",
+            "text-align": "center",
+            "variant": "body1"
+          },
+          "type": {
+            "resolvedName": "ErrorMessage"
+          }
+        },
+        "FFZJmFsDd2": {
+          "custom": {
+            "type": "button"
+          },
+          "displayName": "Button",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "children": "Continue",
+            "color": "primary",
+            "data-type": "button",
+            "formNoValidate": false,
+            "full-width": false,
+            "id": "FFZJmFsDd2",
+            "shape": "",
+            "size": "md",
+            "variant": "contained"
+          },
+          "type": {
+            "resolvedName": "Button"
+          }
+        },
+        "ROOT": {
+          "custom": {},
+          "displayName": "Container",
+          "hidden": false,
+          "isCanvas": true,
+          "linkedNodes": {},
+          "nodes": [
+            "rtdXbfrPXg",
+            "ZBElLXmDzH",
+            "h5ZrSuvhd-",
+            "DXq_0gHzfB",
+            "wjBpm43fV0",
+            "eSqkMrgaRY",
+            "FFZJmFsDd2",
+            "E4z_zdKAmI"
+          ],
+          "props": {
+            "align": "center",
+            "background": "",
+            "data-editor-type": "container",
+            "direction": "column",
+            "id": "ROOT",
+            "justify": "center",
+            "paddingX": "4",
+            "paddingY": "8",
+            "spaceBetween": "4",
+            "st-items-grow": 0,
+            "width": "100%"
+          },
+          "type": {
+            "resolvedName": "Container"
+          }
+        },
+        "ZBElLXmDzH": {
+          "custom": {},
+          "displayName": "Text",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "children": "Welcome Member #{{form.memberId}}\n\n",
+            "full-width": false,
+            "id": "ZBElLXmDzH",
+            "isEnriched": true,
+            "italic": false,
+            "link-target-blank": true,
+            "mode": "primary",
+            "text-align": "center",
+            "variant": "h3"
+          },
+          "type": {
+            "resolvedName": "Text"
+          }
+        },
+        "eSqkMrgaRY": {
+          "custom": {
+            "contextKey": "familyName",
+            "type": "input"
+          },
+          "displayName": "Last Name Input",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "bordered": true,
+            "copy-to-clipboard": false,
+            "data-errormessage-value-missing": "Please fill out this field.",
+            "full-width": true,
+            "id": "eSqkMrgaRY",
+            "label": "Last Name",
+            "label-type": "floating",
+            "max": 100,
+            "name": "lastName",
+            "placeholder": "",
+            "required": false,
+            "size": "md",
+            "type": "text"
+          },
+          "type": {
+            "resolvedName": "LastNameInput"
+          }
+        },
+        "h5ZrSuvhd-": {
+          "custom": {
+            "type": "input"
+          },
+          "displayName": "Custom Login ID Input",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "bordered": true,
+            "copy-to-clipboard": false,
+            "data-errormessage-value-missing": "Please fill out this field.",
+            "full-width": true,
+            "id": "h5ZrSuvhd-",
+            "label": "Username",
+            "label-type": "floating",
+            "max": 100,
+            "name": "externalId",
+            "placeholder": "",
+            "required": false,
+            "size": "md",
+            "type": "text"
+          },
+          "type": {
+            "resolvedName": "CustomIdentifierInput"
+          }
+        },
+        "rtdXbfrPXg": {
+          "custom": {},
+          "displayName": "Logo",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "alt": "Logo",
+            "height": "100px",
+            "id": "rtdXbfrPXg"
+          },
+          "type": {
+            "resolvedName": "Logo"
+          }
+        },
+        "wjBpm43fV0": {
+          "custom": {
+            "contextKey": "givenName",
+            "type": "input"
+          },
+          "displayName": "First Name Input",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "bordered": true,
+            "copy-to-clipboard": false,
+            "data-errormessage-value-missing": "Please fill out this field.",
+            "full-width": true,
+            "id": "wjBpm43fV0",
+            "label": "First Name",
+            "label-type": "floating",
+            "max": 100,
+            "name": "firstName",
+            "placeholder": "",
+            "required": false,
+            "size": "md",
+            "type": "text"
+          },
+          "type": {
+            "resolvedName": "FirstNameInput"
+          }
+        }
+      },
+      "interactions": [
+        {
+          "id": "FFZJmFsDd2",
+          "label": "Continue"
+        }
+      ],
+      "screenId": "SC2wfUOyR77W0XiAVzZURAormUAG9"
     }
   ]
 }
