@@ -25,6 +25,7 @@ jobs:
         id: export
         shell: bash
         env:
+          DESCOPE_PROJECT_ID: ${{ vars.STAGING_PROJECT_ID }}
           DESCOPE_MANAGEMENT_KEY: ${{ secrets.DESCOPE_MGMT_KEY }}
         run: |
           echo "Exporting flows"
