@@ -103,6 +103,7 @@
             "linkedNodes": {},
             "nodes": [
               "Vqjhp_hT8y",
+              "oo5hJj0evo",
               "69fAEt3qFj",
               "d2BuppDC30",
               "cdivS_4ad8",
@@ -287,6 +288,29 @@
             },
             "type": {
               "resolvedName": "Button"
+            }
+          },
+          "oo5hJj0evo": {
+            "custom": {},
+            "displayName": "Text",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "ROOT",
+            "props": {
+              "children": "Welcome!\n\n",
+              "full-width": false,
+              "id": "oo5hJj0evo",
+              "isEnriched": true,
+              "italic": false,
+              "link-target-blank": true,
+              "mode": "primary",
+              "text-align": "center",
+              "variant": "h3"
+            },
+            "type": {
+              "resolvedName": "Text"
             }
           },
           "q4xGoOxrQi": {
@@ -969,6 +993,7 @@
           "linkedNodes": {},
           "nodes": [
             "Vqjhp_hT8y",
+            "oo5hJj0evo",
             "69fAEt3qFj",
             "d2BuppDC30",
             "cdivS_4ad8",
@@ -1153,6 +1178,29 @@
           },
           "type": {
             "resolvedName": "Button"
+          }
+        },
+        "oo5hJj0evo": {
+          "custom": {},
+          "displayName": "Text",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "ROOT",
+          "props": {
+            "children": "Welcome!\n\n",
+            "full-width": false,
+            "id": "oo5hJj0evo",
+            "isEnriched": true,
+            "italic": false,
+            "link-target-blank": true,
+            "mode": "primary",
+            "text-align": "center",
+            "variant": "h3"
+          },
+          "type": {
+            "resolvedName": "Text"
           }
         },
         "q4xGoOxrQi": {
