@@ -1,7 +1,0 @@
-{
-  "configuration": null,
-  "description": "Connector for Checking Password Breaches",
-  "id": "CI2wZO3ZOHOnWbzBcoLqT69grcAnS",
-  "name": "Have I Been Pwned",
-  "type": "hibp"
-}
