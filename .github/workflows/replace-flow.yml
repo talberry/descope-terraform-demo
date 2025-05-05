@@ -33,13 +33,13 @@ jobs:
           CHANGES_FILE=$(mktemp)
 
           # Export sign up or in flow
-          descope flow export sign-up-or-in /flows/sign-up-or-in.json
+          descope flow export sign-up-or-in flows/sign-up-or-in.json
 
           # Export sign in flow
-          descope flow export sign-in /flows/sign-in.json
+          descope flow export sign-in flows/sign-in.json
 
           # Export sign up flow
-          descope flow export sign-up /flows/sign-up.json
+          descope flow export sign-up flows/sign-up.json
 
           # Check for changes
           if [ -n "$(git status --porcelain=v1 2> /dev/null)" ]; then
