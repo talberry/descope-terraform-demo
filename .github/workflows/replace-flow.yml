@@ -20,7 +20,7 @@ jobs:
         id: export
         run: |
           # Export each flow using the API
-          for flow in sign-up-or-in sign-in sign-up forgot-password sso-config-request; do
+          for flow in sign-up-or-in sign-in sign-up sso-config-request; do
             curl -X POST "https://api.descope.com/v2/mgmt/flow/export" \
               -H "Authorization: Bearer ${{ vars.STAGING_PROJECT_ID }}:${{ secrets.DESCOPE_MGMT_KEY }}" \
               -H "Content-Type: application/json" \
@@ -51,5 +51,4 @@ jobs:
             - Updated sign-up-or-in flow
             - Updated sign-in flow
             - Updated sign-up flow
-            - Updated forgot-password flow
             - Updated sso-config-request flow
