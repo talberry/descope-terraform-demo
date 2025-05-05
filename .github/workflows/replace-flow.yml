@@ -19,102 +19,37 @@ jobs:
       - name: Export Flows from Staging
         id: export
         run: |
-          mkdir -p ${{ env.FILES_PATH }}/flows
           # Export each flow using the API
           for flow in sign-up-or-in sign-in sign-up forgot-password sso-config-request; do
             curl -X POST "https://api.descope.com/v2/mgmt/flow/export" \
               -H "Authorization: Bearer ${{ vars.STAGING_PROJECT_ID }}:${{ secrets.DESCOPE_MGMT_KEY }}" \
               -H "Content-Type: application/json" \
               -d "{\"flowId\": \"$flow\"}" \
-              -o "${{ env.FILES_PATH }}/flows/$flow.json"
+              -o "${{ env.FILES_PATH }}/$flow.json"
           done
 
-      - name: Replace Existing Flows
-        run: |
-          # Remove existing flow directories if they exist
-          rm -rf ${{ env.FILES_PATH }}/flows/sign-up-or-in
-          rm -rf ${{ env.FILES_PATH }}/flows/sign-in
-          rm -rf ${{ env.FILES_PATH }}/flows/sign-up
-          rm -rf ${{ env.FILES_PATH }}/flows/forgot-password
-          rm -rf ${{ env.FILES_PATH }}/flows/sso-config-request
-
-          # Create new flow directories
-          mkdir -p ${{ env.FILES_PATH }}/flows/sign-up-or-in
-          mkdir -p ${{ env.FILES_PATH }}/flows/sign-in
-          mkdir -p ${{ env.FILES_PATH }}/flows/sign-up
-          mkdir -p ${{ env.FILES_PATH }}/flows/forgot-password
-          mkdir -p ${{ env.FILES_PATH }}/flows/sso-config-request
-
-          # Move the exported JSON files to their respective directories
-          mv ${{ env.FILES_PATH }}/flows/sign-up-or-in.json ${{ env.FILES_PATH }}/flows/sign-up-or-in/contents.json
-          mv ${{ env.FILES_PATH }}/flows/sign-in.json ${{ env.FILES_PATH }}/flows/sign-in/contents.json
-          mv ${{ env.FILES_PATH }}/flows/sign-up.json ${{ env.FILES_PATH }}/flows/sign-up/contents.json
-          mv ${{ env.FILES_PATH }}/flows/forgot-password.json ${{ env.FILES_PATH }}/flows/forgot-password/contents.json
-          mv ${{ env.FILES_PATH }}/flows/sso-config-request.json ${{ env.FILES_PATH }}/flows/sso-config-request/contents.json
-
-      - name: Check for Changes
-        id: changes
-        run: |
-          if git diff --quiet ${{ env.FILES_PATH }}; then
-            echo "changes_file=" >> $GITHUB_OUTPUT
-          else
-            echo "changes_file=$(mktemp)" >> $GITHUB_OUTPUT
-            git diff --name-only ${{ env.FILES_PATH }} > ${{ steps.changes.outputs.changes_file }}
-          fi
-
-      - name: Cancel if No Changes
-        if: steps.changes.outputs.changes_file == ''
-        shell: bash
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
-        run: |
-          echo 'Cancelling workflow — no changes detected.'
-          gh run cancel "$GITHUB_RUN_ID" -v-repo "$GITHUB_REPOSITORY"
-          echo '## No changes to flows' >> $GITHUB_STEP_SUMMARY
-          echo ':information_source: Exported flows match existing files.' >> $GITHUB_STEP_SUMMARY
-
-      - name: Compose PR Body
-        id: compose
-        if: steps.changes.outputs.changes_file != ''
-        shell: bash
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
-          DEFAULT_NAME: "${{ github.actor }}"
-          DEFAULT_MAIL: "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
-        run: |
-          export PATH_PREFIX="${{ env.FILES_PATH }}/"
-          CHANGES_FILE=$(mktemp)
-          while read -r line; do echo "- \`${line#$PATH_PREFIX}\`" >> $CHANGES_FILE; done < ${{ steps.changes.outputs.changes_file }}
-
-          BODY_FILE=$(mktemp)
-          echo "### Description" > $BODY_FILE
-          echo "Updated flow definitions from staging project \`${{ vars.STAGING_PROJECT_ID }}\`." >> $BODY_FILE
-          echo "" >> $BODY_FILE
-          echo "### Changes" >> $BODY_FILE
-          cat $CHANGES_FILE >> $BODY_FILE
-
-          echo pullreq_body="$BODY_FILE" >> $GITHUB_OUTPUT
-
-          NAME="$(gh api /users/$GITHUB_ACTOR | jq -r '.name // ""')"
-          MAIL="$(gh api /users/$GITHUB_ACTOR | jq -r '.email // ""')"
-          AUTHOR="${NAME:-$DEFAULT_NAME} <${MAIL:-$DEFAULT_MAIL}>"
-          echo pullreq_author="$AUTHOR" >> $GITHUB_OUTPUT
-
       - name: Set Git remote to use PAT
-        if: steps.changes.outputs.changes_file != ''
         run: |
           git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git
 
       - name: Create Pull Request
-        if: steps.changes.outputs.changes_file != ''
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GH_PAT }}
           branch: ${{ env.BRANCH_NAME }}
           delete-branch: true
           assignees: ${{ github.actor }}
-          author: ${{ steps.compose.outputs.pullreq_author }}
-          committer: ${{ steps.compose.outputs.pullreq_author }}
+          author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
+          committer: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
           commit-message: "Update Descope flows from staging"
           title: "Update flows from staging"
-          body-path: ${{ steps.compose.outputs.pullreq_body }}
+          body: |
+            ### Description
+            Updated flow definitions from staging project `${{ vars.STAGING_PROJECT_ID }}`.
+
+            ### Changes
+            - Updated sign-up-or-in flow
+            - Updated sign-in flow
+            - Updated sign-up flow
+            - Updated forgot-password flow
+            - Updated sso-config-request flow
