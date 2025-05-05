@@ -17,9 +17,6 @@ resource "descope_project" "my_project" {
     "sign-up" = {
       data = file("${path.module}/flows/sign-up.json")
     },
-    "forgot-password" = {
-      data = file("${path.module}/flows/forgot-password.json")
-    },
     "sso-config-request" = {
       data = file("${path.module}/flows/sso-config-request.json")
     }
