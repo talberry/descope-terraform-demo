@@ -32,7 +32,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           echo 'Cancelling workflow — no changes detected.'
-          gh run cancel "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY"
+          gh run cancel "$GITHUB_RUN_ID" -v-repo "$GITHUB_REPOSITORY"
           echo '## No changes to flows' >> $GITHUB_STEP_SUMMARY
           echo ':information_source: Exported flows match existing files.' >> $GITHUB_STEP_SUMMARY
 
@@ -63,10 +63,16 @@ jobs:
           AUTHOR="${NAME:-$DEFAULT_NAME} <${MAIL:-$DEFAULT_MAIL}>"
           echo pullreq_author="$AUTHOR" >> $GITHUB_OUTPUT
 
+      - name: Set Git remote to use PAT
+        if: steps.export.outputs.changes_file != ''
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git
+
       - name: Create Pull Request
         if: steps.export.outputs.changes_file != ''
         uses: peter-evans/create-pull-request@v6
         with:
+          token: ${{ secrets.GH_PAT }}
           branch: ${{ env.BRANCH_NAME }}
           delete-branch: true
           assignees: ${{ github.actor }}
