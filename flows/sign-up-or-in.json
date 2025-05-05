@@ -860,8 +860,20 @@
       {
         "id": "14.3",
         "label": "End"
+      },
+      {
+        "id": "14.13",
+        "label": "Any risk detected?"
       }
-    ]
+    ],
+    "translation": {
+      "connectorId": "manual",
+      "enabled": true,
+      "sourceLanguage": "en",
+      "targetLanguages": [
+        "es"
+      ]
+    }
   },
   "screens": [
     {
