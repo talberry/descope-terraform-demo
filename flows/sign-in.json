@@ -3,7 +3,9 @@
     "startTask": "12",
     "tasks": {
       "10": {
-        "allInputKeys": ["code"],
+        "allInputKeys": [
+          "code"
+        ],
         "calculatedInputKeys": true,
         "id": "10",
         "inputsMetadata": [
@@ -455,7 +457,6 @@
       }
     ]
   },
-  "references": {},
   "screens": [
     {
       "contents": {
@@ -688,7 +689,11 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["LmrSIGOWZb", "oneTimeCodeId", "1sMmkeVxVT"],
+          "nodes": [
+            "LmrSIGOWZb",
+            "oneTimeCodeId",
+            "1sMmkeVxVT"
+          ],
           "props": {
             "align": "center",
             "background": "",
@@ -975,7 +980,10 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["LmrSIGOWZb", "1sMmkeVxVT"],
+          "nodes": [
+            "LmrSIGOWZb",
+            "1sMmkeVxVT"
+          ],
           "props": {
             "align": "center",
             "background": "",
@@ -995,6 +1003,7 @@
           }
         }
       },
+      "interactions": [],
       "screenId": "SC2wZNUHVNT89BnzbXVMZj9N09Qdr"
     }
   ]
