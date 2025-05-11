@@ -129,15 +129,3 @@ connectors = {
   ]
 }
 ```
-
-## Project Structure
-
-- `main.tf`: Main Terraform configuration file
-- `flows/`: Directory containing flow definitions
-- `.github/workflows/`: GitHub Actions workflow definitions
-
-## Security Notes
-
-- Never commit sensitive information like API keys or secrets
-- Always use GitHub secrets for sensitive values
-- Regularly rotate your GitHub PAT and Descope Management Key
