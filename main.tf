@@ -4,7 +4,7 @@ provider "descope" {
 }
 
 resource "descope_project" "my_project" {
-  name = "BCBS Stellarus CIAM Demo - PROD"
+  name = "Tee Hee Tees - PROD"
   environment = "production"
 
   flows = {
@@ -17,6 +17,9 @@ resource "descope_project" "my_project" {
     "sign-up" = {
       data = file("${path.module}/flows/sign-up.json")
     },
+    "idp-initiated-sso" = {
+      data = file("${path.module}/flows/idp-initiated-sso.json")
+    }
   }
 
   connectors = {
