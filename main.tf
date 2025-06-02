@@ -22,6 +22,9 @@ resource "descope_project" "my_project" {
     },
     "sign-up-or-in-using-users-preferred-mfa-method" = {
       data = file("${path.module}/flows/sign-up-or-in-using-users-preferred-mfa-method.json")
+    },
+    "preferred-mfa-flow" = {
+      data = file("${path.module}/flows/preferred-mfa-flow.json")
     }
   }
 
