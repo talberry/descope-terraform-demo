@@ -4,7 +4,7 @@ provider "descope" {
 }
 
 resource "descope_project" "my_project" {
-  name = "Tee Hee Tees - PROD"
+  name = "BCBS POC - PROD"
   environment = "production"
 
   flows = {
@@ -19,6 +19,9 @@ resource "descope_project" "my_project" {
     },
     "idp-initiated-sso" = {
       data = file("${path.module}/flows/idp-initiated-sso.json")
+    },
+    "sign-up-or-in-using-users-preferred-mfa-method" = {
+      data = file("${path.module}/flows/sign-up-or-in-using-users-preferred-mfa-method.json")
     }
   }
 

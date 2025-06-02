@@ -3,7 +3,7 @@ provider "descope" {
   management_key = var.management_key
 }
 
-resource "descope_project" "my_project" {
+resource "bcbs-project" "my_project" {
   name = "Tee Hee Tees - PROD"
   environment = "production"
 
