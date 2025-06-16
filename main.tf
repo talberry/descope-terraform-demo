@@ -3,8 +3,8 @@ provider "descope" {
   management_key = var.management_key
 }
 
-resource "descope_project" "my_project" {
-  name = "BCBS POC - PROD"
+resource "descope_project" "linktree_project" {
+  name = "Linktree Demo - PROD"
   environment = "production"
 
   flows = {
@@ -16,15 +16,6 @@ resource "descope_project" "my_project" {
     },
     "sign-up" = {
       data = file("${path.module}/flows/sign-up.json")
-    },
-    "idp-initiated-sso" = {
-      data = file("${path.module}/flows/idp-initiated-sso.json")
-    },
-    "sign-up-or-in-using-users-preferred-mfa-method" = {
-      data = file("${path.module}/flows/sign-up-or-in-using-users-preferred-mfa-method.json")
-    },
-    "preferred-mfa-flow" = {
-      data = file("${path.module}/flows/preferred-mfa-flow.json")
     }
   }
 
@@ -40,6 +31,22 @@ resource "descope_project" "my_project" {
       {
         name = "Have I Been Pwned"
         description = "Connector for Checking Password Breaches"
+      }
+    ],
+    "smtp": [
+      {
+        name = "BCBS Email Connector"
+        description = "BCBS Email Connector"
+        sender = {
+          email = "support@bcbs.com"
+        }
+        server = {
+          host = "587"
+        }
+        authentication = {
+          username = "test"
+          password = "password1"
+        }
       }
     ]
   }
