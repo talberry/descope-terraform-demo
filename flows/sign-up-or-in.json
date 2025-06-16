@@ -42,6 +42,36 @@
               "resolvedName": "GoogleButton"
             }
           },
+          "38du2e5PtS": {
+            "custom": {
+              "subType": "social",
+              "type": "button"
+            },
+            "displayName": "Facebook Button",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "zSbBTJOpe0",
+            "props": {
+              "aria-label": "Sign in with Facebook",
+              "children": "Sign in with Facebook",
+              "color": "primary",
+              "data-descope-provider": "facebook",
+              "data-type": "social",
+              "formNoValidate": true,
+              "full-width": true,
+              "id": "38du2e5PtS",
+              "size": "md",
+              "st-label-spacing": "10px",
+              "startIcon": "facebook",
+              "startIconColorText": false,
+              "variant": "outline"
+            },
+            "type": {
+              "resolvedName": "FacebookButton"
+            }
+          },
           "COcMh1vzSn": {
             "custom": {
               "type": "button"
@@ -247,7 +277,7 @@
             "nodes": [],
             "parent": "ROOT",
             "props": {
-              "children": "Welcome, Linktree User TEST!\n\n",
+              "children": "Welcome, Linktree User!\n\n",
               "full-width": false,
               "id": "cDmtaSAoSF",
               "isEnriched": true,
@@ -388,6 +418,7 @@
             "linkedNodes": {},
             "nodes": [
               "058XUDlhFP",
+              "38du2e5PtS",
               "DrraM2J7Lf",
               "gDYTgzMsxf"
             ],
@@ -445,6 +476,13 @@
             "id": "gDYTgzMsxf",
             "label": "Continue with Passkeys",
             "type": "button"
+          },
+          {
+            "icon": "facebook",
+            "id": "38du2e5PtS",
+            "label": "Sign in with Facebook",
+            "subType": "social",
+            "type": "button"
           }
         ],
         "name": "Welcome Screen",
@@ -464,6 +502,10 @@
             },
             {
               "interactionId": "DrraM2J7Lf",
+              "taskId": "35"
+            },
+            {
+              "interactionId": "38du2e5PtS",
               "taskId": "35"
             }
           ]
@@ -2848,6 +2890,36 @@
             "resolvedName": "GoogleButton"
           }
         },
+        "38du2e5PtS": {
+          "custom": {
+            "subType": "social",
+            "type": "button"
+          },
+          "displayName": "Facebook Button",
+          "hidden": false,
+          "isCanvas": false,
+          "linkedNodes": {},
+          "nodes": [],
+          "parent": "zSbBTJOpe0",
+          "props": {
+            "aria-label": "Sign in with Facebook",
+            "children": "Sign in with Facebook",
+            "color": "primary",
+            "data-descope-provider": "facebook",
+            "data-type": "social",
+            "formNoValidate": true,
+            "full-width": true,
+            "id": "38du2e5PtS",
+            "size": "md",
+            "st-label-spacing": "10px",
+            "startIcon": "facebook",
+            "startIconColorText": false,
+            "variant": "outline"
+          },
+          "type": {
+            "resolvedName": "FacebookButton"
+          }
+        },
         "COcMh1vzSn": {
           "custom": {
             "type": "button"
@@ -3053,7 +3125,7 @@
           "nodes": [],
           "parent": "ROOT",
           "props": {
-            "children": "Welcome, Linktree User TEST!\n\n",
+            "children": "Welcome, Linktree User!\n\n",
             "full-width": false,
             "id": "cDmtaSAoSF",
             "isEnriched": true,
@@ -3194,6 +3266,7 @@
           "linkedNodes": {},
           "nodes": [
             "058XUDlhFP",
+            "38du2e5PtS",
             "DrraM2J7Lf",
             "gDYTgzMsxf"
           ],
@@ -3240,6 +3313,13 @@
           "icon": "passkey",
           "id": "gDYTgzMsxf",
           "label": "Continue with Passkeys",
+          "type": "button"
+        },
+        {
+          "icon": "facebook",
+          "id": "38du2e5PtS",
+          "label": "Sign in with Facebook",
+          "subType": "social",
           "type": "button"
         }
       ],
