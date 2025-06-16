@@ -247,7 +247,7 @@
             "nodes": [],
             "parent": "ROOT",
             "props": {
-              "children": "Welcome, Linktree User!\n\n",
+              "children": "Welcome, Linktree User TEST!\n\n",
               "full-width": false,
               "id": "cDmtaSAoSF",
               "isEnriched": true,
@@ -1357,9 +1357,21 @@
             "type": "inline",
             "value": "35.end"
           },
+          "loginHint": {
+            "type": "inline",
+            "value": ""
+          },
+          "popup": {
+            "type": "inline",
+            "value": ""
+          },
           "prompt": {
             "type": "inline",
             "value": []
+          },
+          "rawResponse": {
+            "type": "inline",
+            "value": ""
           },
           "redirectUrl": {
             "type": "inline",
@@ -3041,7 +3053,7 @@
           "nodes": [],
           "parent": "ROOT",
           "props": {
-            "children": "Welcome, Linktree User!\n\n",
+            "children": "Welcome, Linktree User TEST!\n\n",
             "full-width": false,
             "id": "cDmtaSAoSF",
             "isEnriched": true,
