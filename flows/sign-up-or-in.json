@@ -3,10 +3,450 @@
     "startTask": "0",
     "tasks": {
       "0": {
-        "allInputKeys": ["email"],
+        "allInputKeys": [
+          "email"
+        ],
         "calculatedInputKeys": true,
+        "clientScripts": [],
+        "componentsConnectors": {},
+        "dynamicSelects": {},
+        "htmlTemplate": {
+          "058XUDlhFP": {
+            "custom": {
+              "subType": "social",
+              "type": "button"
+            },
+            "displayName": "Google Button",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "zSbBTJOpe0",
+            "props": {
+              "aria-label": "Sign in with Google",
+              "children": "Continue with Google",
+              "color": "primary",
+              "data-descope-provider": "google",
+              "data-type": "social",
+              "formNoValidate": true,
+              "full-width": true,
+              "id": "058XUDlhFP",
+              "mode": "primary",
+              "size": "md",
+              "st-label-spacing": "10px",
+              "startIcon": "google",
+              "startIconColorText": false,
+              "variant": "outline"
+            },
+            "type": {
+              "resolvedName": "GoogleButton"
+            }
+          },
+          "COcMh1vzSn": {
+            "custom": {
+              "type": "button"
+            },
+            "displayName": "Button",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "ROOT",
+            "props": {
+              "auto-submit": true,
+              "children": "Continue",
+              "color": "primary",
+              "data-type": "button",
+              "formNoValidate": false,
+              "full-width": true,
+              "id": "COcMh1vzSn",
+              "mode": "primary",
+              "size": "md",
+              "variant": "contained"
+            },
+            "type": {
+              "resolvedName": "Button"
+            }
+          },
+          "DrraM2J7Lf": {
+            "custom": {
+              "subType": "social",
+              "type": "button"
+            },
+            "displayName": "Apple Button",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "zSbBTJOpe0",
+            "props": {
+              "aria-label": "Sign in with Apple",
+              "children": "Continue with Apple",
+              "color": "primary",
+              "data-descope-provider": "apple",
+              "data-type": "social",
+              "formNoValidate": true,
+              "full-width": true,
+              "id": "DrraM2J7Lf",
+              "shape": "",
+              "size": "md",
+              "st-label-spacing": "10px",
+              "startIcon": "apple",
+              "startIconColorText": false,
+              "variant": "outline"
+            },
+            "type": {
+              "resolvedName": "AppleButton"
+            }
+          },
+          "F6duB0LsbH": {
+            "custom": {},
+            "displayName": "Text",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "PsVOJz6EKK",
+            "props": {
+              "children": "By continuing, I agree to the Company's",
+              "full-width": false,
+              "id": "F6duB0LsbH",
+              "isEnriched": true,
+              "italic": false,
+              "link-target-blank": true,
+              "mode": "primary",
+              "text-align": "center",
+              "variant": "body1"
+            },
+            "type": {
+              "resolvedName": "Text"
+            }
+          },
+          "O6g57IzhQ9": {
+            "custom": {},
+            "displayName": "Error Message",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "ROOT",
+            "props": {
+              "data-type": "error-message",
+              "full-width": false,
+              "hide-when-empty": true,
+              "id": "O6g57IzhQ9",
+              "italic": false,
+              "link-target-blank": true,
+              "mode": "error",
+              "text-align": "center",
+              "variant": "body1"
+            },
+            "type": {
+              "resolvedName": "ErrorMessage"
+            }
+          },
+          "PsVOJz6EKK": {
+            "custom": {},
+            "displayName": "Container",
+            "hidden": false,
+            "isCanvas": true,
+            "linkedNodes": {},
+            "nodes": [
+              "F6duB0LsbH",
+              "p38wRKDanu",
+              "fpO7WnUtoV",
+              "iFbr4t5xkI"
+            ],
+            "parent": "ROOT",
+            "props": {
+              "align": "start",
+              "background": "#ffffff00",
+              "data-editor-type": "container",
+              "direction": "row",
+              "id": "PsVOJz6EKK",
+              "justify": "center",
+              "paddingX": "4",
+              "paddingY": "1",
+              "spaceBetween": "0.5",
+              "st-items-grow": 0,
+              "width": "100%"
+            },
+            "type": {
+              "resolvedName": "Container"
+            }
+          },
+          "ROOT": {
+            "custom": {},
+            "displayName": "Container",
+            "hidden": false,
+            "isCanvas": true,
+            "linkedNodes": {},
+            "nodes": [
+              "cDmtaSAoSF",
+              "YsKt52415F",
+              "PsVOJz6EKK",
+              "COcMh1vzSn",
+              "qVrDtsk_QL",
+              "zSbBTJOpe0",
+              "O6g57IzhQ9"
+            ],
+            "props": {
+              "align": "center",
+              "background": "",
+              "data-editor-type": "container",
+              "direction": "column",
+              "id": "ROOT",
+              "justify": "center",
+              "paddingX": "4",
+              "paddingY": "8",
+              "spaceBetween": "4",
+              "st-items-grow": 0,
+              "width": "100%"
+            },
+            "type": {
+              "resolvedName": "Container"
+            }
+          },
+          "YsKt52415F": {
+            "custom": {
+              "type": "input"
+            },
+            "displayName": "Email Input",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "ROOT",
+            "props": {
+              "bordered": true,
+              "copy-to-clipboard": false,
+              "data-errormessage-pattern-mismatch": "Must be a valid email",
+              "data-errormessage-value-missing": "Please fill out this field.",
+              "full-width": true,
+              "id": "YsKt52415F",
+              "label": "",
+              "label-type": "static",
+              "max": 100,
+              "name": "email",
+              "pattern": "^[\\w._%+-]+@[\\w.-]+\\.[A-Za-z]{2,}$",
+              "placeholder": "Email address *",
+              "required": true,
+              "size": "md",
+              "type": "email"
+            },
+            "type": {
+              "resolvedName": "EmailInput"
+            }
+          },
+          "cDmtaSAoSF": {
+            "custom": {},
+            "displayName": "Text",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "ROOT",
+            "props": {
+              "children": "Welcome, Linktree User TEST!\n\n",
+              "full-width": false,
+              "id": "cDmtaSAoSF",
+              "isEnriched": true,
+              "italic": false,
+              "link-target-blank": true,
+              "mode": "primary",
+              "text-align": "center",
+              "variant": "h3"
+            },
+            "type": {
+              "resolvedName": "Text"
+            }
+          },
+          "fpO7WnUtoV": {
+            "custom": {},
+            "displayName": "Text",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "PsVOJz6EKK",
+            "props": {
+              "children": "and",
+              "full-width": false,
+              "id": "fpO7WnUtoV",
+              "isEnriched": true,
+              "italic": false,
+              "link-target-blank": true,
+              "mode": "primary",
+              "text-align": "center",
+              "variant": "body1"
+            },
+            "type": {
+              "resolvedName": "Text"
+            }
+          },
+          "gDYTgzMsxf": {
+            "custom": {
+              "type": "button"
+            },
+            "displayName": "Passkey Button",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "zSbBTJOpe0",
+            "props": {
+              "aria-label": "Sign in with passkey",
+              "children": "Continue with Passkeys",
+              "color": "primary",
+              "data-type": "biometrics",
+              "formNoValidate": false,
+              "full-width": true,
+              "id": "gDYTgzMsxf",
+              "mode": "primary",
+              "size": "md",
+              "st-icon-color": "currentColor",
+              "st-label-spacing": "10px",
+              "startIcon": "passkey",
+              "startIconColorText": true,
+              "variant": "outline"
+            },
+            "type": {
+              "resolvedName": "PasskeyButton"
+            }
+          },
+          "iFbr4t5xkI": {
+            "custom": {},
+            "displayName": "Link",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "PsVOJz6EKK",
+            "props": {
+              "children": "Terms of Service",
+              "full-width": false,
+              "href": "",
+              "id": "iFbr4t5xkI",
+              "italic": false,
+              "mode": "primary",
+              "target": "_blank",
+              "text-align": "center",
+              "variant": "body1"
+            },
+            "type": {
+              "resolvedName": "Link"
+            }
+          },
+          "p38wRKDanu": {
+            "custom": {},
+            "displayName": "Link",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "PsVOJz6EKK",
+            "props": {
+              "children": "Privacy Statement",
+              "full-width": false,
+              "href": "",
+              "id": "p38wRKDanu",
+              "italic": false,
+              "mode": "primary",
+              "target": "_blank",
+              "text-align": "center",
+              "variant": "body1"
+            },
+            "type": {
+              "resolvedName": "Link"
+            }
+          },
+          "qVrDtsk_QL": {
+            "custom": {},
+            "displayName": "Divider",
+            "hidden": false,
+            "isCanvas": false,
+            "linkedNodes": {},
+            "nodes": [],
+            "parent": "ROOT",
+            "props": {
+              "children": "OR",
+              "id": "qVrDtsk_QL",
+              "italic": false,
+              "mode": "primary",
+              "variant": "body1",
+              "vertical": false
+            },
+            "type": {
+              "resolvedName": "Divider"
+            }
+          },
+          "zSbBTJOpe0": {
+            "custom": {},
+            "displayName": "Container",
+            "hidden": false,
+            "isCanvas": true,
+            "linkedNodes": {},
+            "nodes": [
+              "058XUDlhFP",
+              "DrraM2J7Lf",
+              "gDYTgzMsxf"
+            ],
+            "parent": "ROOT",
+            "props": {
+              "align": "center",
+              "background": "#ffffff00",
+              "data-editor-type": "container",
+              "direction": "column",
+              "id": "zSbBTJOpe0",
+              "justify": "start",
+              "paddingX": "0",
+              "paddingY": "4",
+              "spaceBetween": "1.5",
+              "st-items-grow": 0,
+              "width": "100%"
+            },
+            "type": {
+              "resolvedName": "Container"
+            }
+          }
+        },
         "id": "0",
-        "inputKeys": ["email"],
+        "inputKeys": [
+          "email"
+        ],
+        "inputsMetadata": [
+          {
+            "displayName": "Email Input",
+            "key": "email"
+          }
+        ],
+        "interactions": [
+          {
+            "icon": "google",
+            "id": "058XUDlhFP",
+            "label": "Continue with Google",
+            "subType": "social",
+            "type": "button"
+          },
+          {
+            "id": "COcMh1vzSn",
+            "label": "Continue",
+            "type": "button"
+          },
+          {
+            "icon": "apple",
+            "id": "DrraM2J7Lf",
+            "label": "Continue with Apple",
+            "subType": "social",
+            "type": "button"
+          },
+          {
+            "icon": "passkey",
+            "id": "gDYTgzMsxf",
+            "label": "Continue with Passkeys",
+            "type": "button"
+          }
+        ],
         "name": "Welcome Screen",
         "next": {
           "rules": [
@@ -33,80 +473,6 @@
         "view": {
           "x": -588,
           "y": -48
-        }
-      },
-      "5": {
-        "conditions": [
-          {
-            "atomicConditions": [
-              {
-                "operator": "is-true",
-                "predicate": {
-                  "type": "inline",
-                  "value": ""
-                },
-                "target": {
-                  "type": "context",
-                  "value": "authInfo.firstSeen"
-                }
-              }
-            ],
-            "interactionId": "1cycrxvv9k2",
-            "name": "New user"
-          },
-          {
-            "interactionId": "ELSE",
-            "name": "Existing user"
-          }
-        ],
-        "id": "5",
-        "name": "Is new user?",
-        "next": {
-          "rules": [
-            {
-              "interactionId": "1cycrxvv9k2",
-              "taskId": "7"
-            },
-            {
-              "interactionId": "ELSE",
-              "taskId": "11"
-            }
-          ]
-        },
-        "type": "condition",
-        "view": {
-          "x": 444,
-          "y": -348
-        }
-      },
-      "6": {
-        "action": "logged-in",
-        "id": "6",
-        "name": "Generate JWT",
-        "next": {},
-        "type": "automated",
-        "view": {
-          "x": 5208,
-          "y": 120
-        }
-      },
-      "7": {
-        "id": "7",
-        "inputKeys": ["fullName"],
-        "name": "User Information - Unverified - Phone Only",
-        "next": {
-          "rules": [
-            {
-              "interactionId": "VZn7G1QGq3",
-              "taskId": "27"
-            }
-          ]
-        },
-        "screenId": "SC2ybnaeroUcED2GRjXJ9H0JMtiqe",
-        "type": "screen",
-        "view": {
-          "x": 1692,
-          "y": -516
         }
       },
       "11": {
@@ -146,10 +512,20 @@
         }
       },
       "13": {
-        "allInputKeys": ["code"],
+        "allInputKeys": [
+          "code"
+        ],
         "calculatedInputKeys": true,
-        "contextKeys": ["sentTo.maskedPhone"],
+        "contextKeys": [
+          "sentTo.maskedPhone"
+        ],
         "id": "13",
+        "inputsMetadata": [
+          {
+            "displayName": "One Time Code",
+            "key": "code"
+          }
+        ],
         "name": "Verify OTP",
         "next": {
           "rules": [
@@ -233,7 +609,16 @@
         }
       },
       "16": {
+        "contextKeys": [
+          "inputs.phone"
+        ],
         "id": "16",
+        "inputsMetadata": [
+          {
+            "displayName": "Full Name Input",
+            "key": "fullName"
+          }
+        ],
         "name": "User Information",
         "next": {
           "rules": [
@@ -314,6 +699,7 @@
       },
       "21": {
         "id": "21",
+        "inputsMetadata": [],
         "name": "Promote Biometrics",
         "next": {
           "rules": [
@@ -421,6 +807,38 @@
           "y": -504
         }
       },
+      "23.end": {
+        "action": "webauthn-update-user-finish",
+        "arguments": {
+          "finishStepId": {
+            "type": "inline",
+            "value": "23.end"
+          },
+          "restrictPasskeyTypes": {
+            "type": "inline",
+            "value": ""
+          },
+          "userVerificationDiscouraged": {
+            "type": "inline",
+            "value": ""
+          }
+        },
+        "id": "23.end",
+        "name": "Update User/ Passkeys (WebAuthn)",
+        "next": {
+          "rules": [
+            {
+              "interactionId": "success",
+              "taskId": "6"
+            }
+          ]
+        },
+        "type": "automated",
+        "view": {
+          "x": 4824,
+          "y": -504
+        }
+      },
       "24": {
         "action": "sign-up-or-in-magic-link-email",
         "arguments": {
@@ -469,8 +887,56 @@
           "y": -288
         }
       },
+      "24.end": {
+        "action": "verify-magic-link",
+        "arguments": {
+          "extraTemplateVals": {
+            "type": "inline",
+            "value": ""
+          },
+          "providerId": {
+            "type": "inline",
+            "value": ""
+          },
+          "skipVerify": {
+            "type": "inline",
+            "value": ""
+          },
+          "templateId": {
+            "type": "inline",
+            "value": ""
+          },
+          "uri": {
+            "type": "inline",
+            "value": ""
+          },
+          "verifyStepId": {
+            "type": "inline",
+            "value": "24.end"
+          }
+        },
+        "id": "24.end",
+        "name": "Sign Up or In / Magic Link / Email",
+        "next": {
+          "rules": [
+            {
+              "interactionId": "success",
+              "taskId": "5"
+            }
+          ]
+        },
+        "type": "automated",
+        "view": {
+          "x": -132,
+          "y": -288
+        }
+      },
       "25": {
+        "contextKeys": [
+          "sentTo.maskedEmail"
+        ],
         "id": "25",
+        "inputsMetadata": [],
         "name": "Magic Link Sent",
         "next": {
           "rules": [
@@ -497,6 +963,7 @@
       },
       "26": {
         "id": "26",
+        "inputsMetadata": [],
         "name": "Verified Successfully",
         "next": {},
         "screenId": "SC2ybnad9Jv9BjATNZytNmC3930nC",
@@ -525,8 +992,16 @@
         }
       },
       "28": {
-        "contextKeys": ["sentTo.maskedPhone"],
+        "contextKeys": [
+          "sentTo.maskedPhone"
+        ],
         "id": "28",
+        "inputsMetadata": [
+          {
+            "displayName": "One Time Code",
+            "key": "code"
+          }
+        ],
         "name": "Verify OTP",
         "next": {
           "rules": [
@@ -601,6 +1076,38 @@
           "y": 24
         }
       },
+      "30.end": {
+        "action": "webauthn-sign-up-or-in-finish",
+        "arguments": {
+          "finishStepId": {
+            "type": "inline",
+            "value": "30.end"
+          },
+          "restrictPasskeyTypes": {
+            "type": "inline",
+            "value": ""
+          },
+          "userVerificationDiscouraged": {
+            "type": "inline",
+            "value": ""
+          }
+        },
+        "id": "30.end",
+        "name": "Sign Up or In/ Passkeys (WebAuthn)",
+        "next": {
+          "rules": [
+            {
+              "interactionId": "success",
+              "taskId": "34"
+            }
+          ]
+        },
+        "type": "automated",
+        "view": {
+          "x": -132,
+          "y": 24
+        }
+      },
       "31": {
         "action": "update-user-magic-link-email",
         "arguments": {
@@ -653,8 +1160,60 @@
           "y": 336
         }
       },
+      "31.end": {
+        "action": "verify-magic-link",
+        "arguments": {
+          "addToLoginIDs": {
+            "type": "inline",
+            "value": ""
+          },
+          "extraTemplateVals": {
+            "type": "inline",
+            "value": ""
+          },
+          "onMergeUseExisting": {
+            "type": "inline",
+            "value": ""
+          },
+          "providerId": {
+            "type": "inline",
+            "value": ""
+          },
+          "templateId": {
+            "type": "inline",
+            "value": ""
+          },
+          "uri": {
+            "type": "inline",
+            "value": ""
+          },
+          "verifyStepId": {
+            "type": "inline",
+            "value": "31.end"
+          }
+        },
+        "id": "31.end",
+        "name": "Update User / Magic Link / Email",
+        "next": {
+          "rules": [
+            {
+              "interactionId": "success",
+              "taskId": "18"
+            }
+          ]
+        },
+        "type": "automated",
+        "view": {
+          "x": 684,
+          "y": 336
+        }
+      },
       "32": {
+        "contextKeys": [
+          "sentTo.maskedEmail"
+        ],
         "id": "32",
+        "inputsMetadata": [],
         "name": "Magic Link Sent",
         "next": {
           "rules": [
@@ -677,6 +1236,7 @@
       },
       "33": {
         "id": "33",
+        "inputsMetadata": [],
         "name": "Verified Successfully",
         "next": {},
         "screenId": "SC2ybnaZiS2Vd5rnhph64h4uUq4SL",
@@ -745,9 +1305,21 @@
             "type": "inline",
             "value": "35.end"
           },
+          "loginHint": {
+            "type": "inline",
+            "value": ""
+          },
+          "popup": {
+            "type": "inline",
+            "value": ""
+          },
           "prompt": {
             "type": "inline",
             "value": []
+          },
+          "rawResponse": {
+            "type": "inline",
+            "value": ""
           },
           "redirectUrl": {
             "type": "inline",
@@ -770,162 +1342,6 @@
           "y": 696
         }
       },
-      "23.end": {
-        "action": "webauthn-update-user-finish",
-        "arguments": {
-          "finishStepId": {
-            "type": "inline",
-            "value": "23.end"
-          },
-          "restrictPasskeyTypes": {
-            "type": "inline",
-            "value": ""
-          },
-          "userVerificationDiscouraged": {
-            "type": "inline",
-            "value": ""
-          }
-        },
-        "id": "23.end",
-        "name": "Update User/ Passkeys (WebAuthn)",
-        "next": {
-          "rules": [
-            {
-              "interactionId": "success",
-              "taskId": "6"
-            }
-          ]
-        },
-        "type": "automated",
-        "view": {
-          "x": 4824,
-          "y": -504
-        }
-      },
-      "24.end": {
-        "action": "verify-magic-link",
-        "arguments": {
-          "extraTemplateVals": {
-            "type": "inline",
-            "value": ""
-          },
-          "providerId": {
-            "type": "inline",
-            "value": ""
-          },
-          "skipVerify": {
-            "type": "inline",
-            "value": ""
-          },
-          "templateId": {
-            "type": "inline",
-            "value": ""
-          },
-          "uri": {
-            "type": "inline",
-            "value": ""
-          },
-          "verifyStepId": {
-            "type": "inline",
-            "value": "24.end"
-          }
-        },
-        "id": "24.end",
-        "name": "Sign Up or In / Magic Link / Email",
-        "next": {
-          "rules": [
-            {
-              "interactionId": "success",
-              "taskId": "5"
-            }
-          ]
-        },
-        "type": "automated",
-        "view": {
-          "x": -132,
-          "y": -288
-        }
-      },
-      "30.end": {
-        "action": "webauthn-sign-up-or-in-finish",
-        "arguments": {
-          "finishStepId": {
-            "type": "inline",
-            "value": "30.end"
-          },
-          "restrictPasskeyTypes": {
-            "type": "inline",
-            "value": ""
-          },
-          "userVerificationDiscouraged": {
-            "type": "inline",
-            "value": ""
-          }
-        },
-        "id": "30.end",
-        "name": "Sign Up or In/ Passkeys (WebAuthn)",
-        "next": {
-          "rules": [
-            {
-              "interactionId": "success",
-              "taskId": "34"
-            }
-          ]
-        },
-        "type": "automated",
-        "view": {
-          "x": -132,
-          "y": 24
-        }
-      },
-      "31.end": {
-        "action": "verify-magic-link",
-        "arguments": {
-          "addToLoginIDs": {
-            "type": "inline",
-            "value": ""
-          },
-          "extraTemplateVals": {
-            "type": "inline",
-            "value": ""
-          },
-          "onMergeUseExisting": {
-            "type": "inline",
-            "value": ""
-          },
-          "providerId": {
-            "type": "inline",
-            "value": ""
-          },
-          "templateId": {
-            "type": "inline",
-            "value": ""
-          },
-          "uri": {
-            "type": "inline",
-            "value": ""
-          },
-          "verifyStepId": {
-            "type": "inline",
-            "value": "31.end"
-          }
-        },
-        "id": "31.end",
-        "name": "Update User / Magic Link / Email",
-        "next": {
-          "rules": [
-            {
-              "interactionId": "success",
-              "taskId": "18"
-            }
-          ]
-        },
-        "type": "automated",
-        "view": {
-          "x": 684,
-          "y": 336
-        }
-      },
       "35.end": {
         "action": "exchange-oauth-code",
         "arguments": {
@@ -941,9 +1357,21 @@
             "type": "inline",
             "value": "35.end"
           },
+          "loginHint": {
+            "type": "inline",
+            "value": ""
+          },
+          "popup": {
+            "type": "inline",
+            "value": ""
+          },
           "prompt": {
             "type": "inline",
             "value": []
+          },
+          "rawResponse": {
+            "type": "inline",
+            "value": ""
           },
           "redirectUrl": {
             "type": "inline",
@@ -966,6 +1394,92 @@
           "y": 696
         }
       },
+      "5": {
+        "conditions": [
+          {
+            "atomicConditions": [
+              {
+                "operator": "is-true",
+                "predicate": {
+                  "type": "inline",
+                  "value": ""
+                },
+                "target": {
+                  "type": "context",
+                  "value": "authInfo.firstSeen"
+                }
+              }
+            ],
+            "interactionId": "1cycrxvv9k2",
+            "name": "New user"
+          },
+          {
+            "interactionId": "ELSE",
+            "name": "Existing user"
+          }
+        ],
+        "id": "5",
+        "name": "Is new user?",
+        "next": {
+          "rules": [
+            {
+              "interactionId": "1cycrxvv9k2",
+              "taskId": "7"
+            },
+            {
+              "interactionId": "ELSE",
+              "taskId": "11"
+            }
+          ]
+        },
+        "type": "condition",
+        "view": {
+          "x": 444,
+          "y": -348
+        }
+      },
+      "6": {
+        "action": "logged-in",
+        "id": "6",
+        "name": "End",
+        "next": {},
+        "type": "automated",
+        "view": {
+          "x": 5208,
+          "y": 120
+        }
+      },
+      "7": {
+        "id": "7",
+        "inputKeys": [
+          "fullName"
+        ],
+        "inputsMetadata": [
+          {
+            "displayName": "Phone Input",
+            "key": "phone"
+          },
+          {
+            "displayName": "Full Name Input",
+            "key": "fullName"
+          }
+        ],
+        "name": "User Information - Unverified - Phone Only",
+        "next": {
+          "rules": [
+            {
+              "interactionId": "VZn7G1QGq3",
+              "taskId": "27"
+            }
+          ]
+        },
+        "screenId": "SC2ybnaeroUcED2GRjXJ9H0JMtiqe",
+        "type": "screen",
+        "view": {
+          "x": 1692,
+          "y": -516
+        }
+      },
       "start": {
         "id": "start",
         "name": "start",
@@ -985,7 +1499,7 @@
   },
   "flowId": "sign-up-or-in",
   "metadata": {
-    "componentsVersion": "2.0.463",
+    "componentsVersion": "2.0.547",
     "description": "Default Descope Sign Up or In flow; enables users to sign up or in via Magic Link, Social Logins or Biometrics. For Biometrics, Email is verified if needed. Registration information includes Full Name and Phone (verification via OTP).",
     "name": "Sign Up or In",
     "sharedInteractions": [
@@ -995,7 +1509,6 @@
       }
     ]
   },
-  "references": {},
   "screens": [
     {
       "contents": {
@@ -1068,7 +1581,9 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["resend"],
+          "nodes": [
+            "resend"
+          ],
           "parent": "ROOT",
           "props": {
             "align": "center",
@@ -1181,7 +1696,9 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["_1ysreq1iL"],
+          "nodes": [
+            "_1ysreq1iL"
+          ],
           "parent": "yZNZ2ZVVu_",
           "props": {
             "align": "start",
@@ -1206,7 +1723,9 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["resend"],
+          "nodes": [
+            "resend"
+          ],
           "parent": "yZNZ2ZVVu_",
           "props": {
             "align": "center",
@@ -1259,7 +1778,11 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["auED4dEJkJ", "eBGiu9cYSb", "yZNZ2ZVVu_"],
+          "nodes": [
+            "auED4dEJkJ",
+            "eBGiu9cYSb",
+            "yZNZ2ZVVu_"
+          ],
           "props": {
             "align": "center",
             "background": "",
@@ -1378,7 +1901,11 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["ONbv0ZWevM", "CoPZsDD4qv", "FJm7_vlTEW"],
+          "nodes": [
+            "ONbv0ZWevM",
+            "CoPZsDD4qv",
+            "FJm7_vlTEW"
+          ],
           "parent": "ROOT",
           "props": {
             "align": "center",
@@ -1478,7 +2005,11 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["PUZgvFyUAB", "LmrSIGOWZb", "1sMmkeVxVT"],
+          "nodes": [
+            "PUZgvFyUAB",
+            "LmrSIGOWZb",
+            "1sMmkeVxVT"
+          ],
           "props": {
             "align": "center",
             "background": "",
@@ -1496,6 +2027,7 @@
           }
         }
       },
+      "interactions": [],
       "screenId": "SC2ybnaZiS2Vd5rnhph64h4uUq4SL"
     },
     {
@@ -1601,7 +2133,10 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["resend", "EbW8KMdjAx"],
+          "nodes": [
+            "resend",
+            "EbW8KMdjAx"
+          ],
           "parent": "ROOT",
           "props": {
             "align": "center",
@@ -1735,7 +2270,10 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["NBlRNCDAZS", "-elJaMwrLU"],
+          "nodes": [
+            "NBlRNCDAZS",
+            "-elJaMwrLU"
+          ],
           "parent": "ROOT",
           "props": {
             "align": "center",
@@ -1913,7 +2451,10 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["resend", "pnOqEGpL1b"],
+          "nodes": [
+            "resend",
+            "pnOqEGpL1b"
+          ],
           "parent": "yZNZ2ZVVu_",
           "props": {
             "align": "center",
@@ -1966,7 +2507,9 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["fpDoUMsBUm"],
+          "nodes": [
+            "fpDoUMsBUm"
+          ],
           "parent": "yZNZ2ZVVu_",
           "props": {
             "align": "start",
@@ -1991,7 +2534,11 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["auED4dEJkJ", "eBGiu9cYSb", "yZNZ2ZVVu_"],
+          "nodes": [
+            "auED4dEJkJ",
+            "eBGiu9cYSb",
+            "yZNZ2ZVVu_"
+          ],
           "props": {
             "align": "center",
             "background": "",
@@ -2135,7 +2682,11 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["LPg4A5kpM-", "QW6CWy1Z9D", "FJm7_vlTEW"],
+          "nodes": [
+            "LPg4A5kpM-",
+            "QW6CWy1Z9D",
+            "FJm7_vlTEW"
+          ],
           "parent": "ROOT",
           "props": {
             "align": "center",
@@ -2239,7 +2790,11 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["PUZgvFyUAB", "LmrSIGOWZb", "1sMmkeVxVT"],
+          "nodes": [
+            "PUZgvFyUAB",
+            "LmrSIGOWZb",
+            "1sMmkeVxVT"
+          ],
           "props": {
             "align": "center",
             "background": "",
@@ -2257,6 +2812,7 @@
           }
         }
       },
+      "interactions": [],
       "screenId": "SC2ybnad9Jv9BjATNZytNmC3930nC"
     },
     {
@@ -2273,6 +2829,7 @@
           "nodes": [],
           "parent": "zSbBTJOpe0",
           "props": {
+            "aria-label": "Sign in with Google",
             "children": "Continue with Google",
             "color": "primary",
             "data-descope-provider": "google",
@@ -2329,6 +2886,7 @@
           "nodes": [],
           "parent": "zSbBTJOpe0",
           "props": {
+            "aria-label": "Sign in with Apple",
             "children": "Continue with Apple",
             "color": "primary",
             "data-descope-provider": "apple",
@@ -2384,6 +2942,7 @@
             "hide-when-empty": true,
             "id": "O6g57IzhQ9",
             "italic": false,
+            "link-target-blank": true,
             "mode": "error",
             "text-align": "center",
             "variant": "body1"
@@ -2398,7 +2957,12 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["F6duB0LsbH", "p38wRKDanu", "fpO7WnUtoV", "iFbr4t5xkI"],
+          "nodes": [
+            "F6duB0LsbH",
+            "p38wRKDanu",
+            "fpO7WnUtoV",
+            "iFbr4t5xkI"
+          ],
           "parent": "ROOT",
           "props": {
             "align": "start",
@@ -2489,7 +3053,7 @@
           "nodes": [],
           "parent": "ROOT",
           "props": {
-            "children": "Welcome!",
+            "children": "Welcome, Linktree User TEST!\n\n",
             "full-width": false,
             "id": "cDmtaSAoSF",
             "isEnriched": true,
@@ -2537,6 +3101,7 @@
           "nodes": [],
           "parent": "zSbBTJOpe0",
           "props": {
+            "aria-label": "Sign in with passkey",
             "children": "Continue with Passkeys",
             "color": "primary",
             "data-type": "biometrics",
@@ -2627,7 +3192,11 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["058XUDlhFP", "DrraM2J7Lf", "gDYTgzMsxf"],
+          "nodes": [
+            "058XUDlhFP",
+            "DrraM2J7Lf",
+            "gDYTgzMsxf"
+          ],
           "parent": "ROOT",
           "props": {
             "align": "center",
@@ -2652,22 +3221,26 @@
           "icon": "google",
           "id": "058XUDlhFP",
           "label": "Continue with Google",
-          "subType": "social"
+          "subType": "social",
+          "type": "button"
         },
         {
           "id": "COcMh1vzSn",
-          "label": "Continue"
+          "label": "Continue",
+          "type": "button"
         },
         {
           "icon": "apple",
           "id": "DrraM2J7Lf",
           "label": "Continue with Apple",
-          "subType": "social"
+          "subType": "social",
+          "type": "button"
         },
         {
           "icon": "passkey",
           "id": "gDYTgzMsxf",
-          "label": "Continue with Passkeys"
+          "label": "Continue with Passkeys",
+          "type": "button"
         }
       ],
       "screenId": "SC2ybnadBX1y3ijkyPFBvHJNGegIT"
@@ -2680,7 +3253,10 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["jqtNmu7Gql", "UZHgESPGoK"],
+          "nodes": [
+            "jqtNmu7Gql",
+            "UZHgESPGoK"
+          ],
           "parent": "ROOT",
           "props": {
             "align": "center",
@@ -2751,7 +3327,12 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["7mIfMql_Ht", "NQ8ig4chcI", "4I3hQX95BZ", "vzbXHpGdM8"],
+          "nodes": [
+            "7mIfMql_Ht",
+            "NQ8ig4chcI",
+            "4I3hQX95BZ",
+            "vzbXHpGdM8"
+          ],
           "props": {
             "align": "center",
             "background": "",
@@ -2902,7 +3483,10 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["jNFBRQNhqu", "vunvn4_jAv"],
+          "nodes": [
+            "jNFBRQNhqu",
+            "vunvn4_jAv"
+          ],
           "parent": "ROOT",
           "props": {
             "align": "center",
@@ -2926,7 +3510,12 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["8DdfdVbwWU", "fJkZrzVYgH", "Qj7Jze34Ov", "Sc2XmeaKa8"],
+          "nodes": [
+            "8DdfdVbwWU",
+            "fJkZrzVYgH",
+            "Qj7Jze34Ov",
+            "Sc2XmeaKa8"
+          ],
           "props": {
             "align": "center",
             "background": "",
@@ -3024,7 +3613,9 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["3macLQfIKv"],
+          "nodes": [
+            "3macLQfIKv"
+          ],
           "parent": "Qj7Jze34Ov",
           "props": {
             "align": "start",
@@ -3048,7 +3639,9 @@
           "hidden": false,
           "isCanvas": true,
           "linkedNodes": {},
-          "nodes": ["VZn7G1QGq3"],
+          "nodes": [
+            "VZn7G1QGq3"
+          ],
           "parent": "Qj7Jze34Ov",
           "props": {
             "align": "start",
