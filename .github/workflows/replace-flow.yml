@@ -41,9 +41,6 @@ jobs:
           # Export sign up flow
           descope flow export sign-up flows/sign-up.json
 
-          # Export idp-initiated-sso flow
-          descope flow export idp-initiated-sso flows/idp-initiated-sso.json
-
           # Check for changes
           if [ -n "$(git status --porcelain=v1 2> /dev/null)" ]; then
             git add "${{ env.FILES_PATH }}"
