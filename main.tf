@@ -35,10 +35,10 @@ resource "descope_project" "linktree_project" {
     ],
     "smtp": [
       {
-        name = "BCBS Email Connector"
-        description = "BCBS Email Connector"
+        name = "Email Connector"
+        description = "Email Connector"
         sender = {
-          email = "support@bcbs.com"
+          email = "support@linktree.com"
         }
         server = {
           host = "587"
