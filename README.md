@@ -11,16 +11,9 @@ This demo is designed for Descope Solutions Engineers (SEs) and Developer Relati
 - Best practices for promoting changes from staging to production
 - Integration with modern CI/CD tools and workflows
 
-## Prerequisites
-
-- A GitHub account
-- A Descope account
-- Terraform installed locally (version 1.6.6 or later)
-- GitHub Personal Access Token (PAT) with the following permissions:
-  - `repo` (Full control of private repositories)
-  - `workflow` (Update GitHub Action workflows)
-
 ## Setup
+
+> A Full Complete Guide to setting this demo up can be found in this [Notion page](https://www.notion.so/descope/Terraform-Demo-for-Descope-217397faca2a80d4b1d2d297cdbf5f45?source=copy_link).
 
 1. Fork or clone this repository:
 
@@ -34,7 +27,6 @@ This demo is designed for Descope Solutions Engineers (SEs) and Developer Relati
    - `flows/sign-up-or-in.json`
    - `flows/sign-in.json`
    - `flows/sign-up.json`
-   - `flows/idp-initiated-sso.json`
 
    These files should contain your current flow configurations. You can export them from your Descope Console or create them from scratch.
 
@@ -48,7 +40,6 @@ This demo is designed for Descope Solutions Engineers (SEs) and Developer Relati
    **Variables:**
 
    - `STAGING_PROJECT_ID`: Your Descope Staging Project ID
-   - `PRODUCTION_PROJECT_ID`: Your Descope Production Project ID (optional - will be created automatically)
 
 4. To set up GitHub secrets and variables:
    - Go to your repository settings
