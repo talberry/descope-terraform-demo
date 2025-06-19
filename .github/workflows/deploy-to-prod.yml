@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      TF_VAR_project_id: ${{ vars.PRODUCTION_PROJECT_ID }}
+      TF_VAR_project_id: ${{ vars.STAGING_PROJECT_ID }}
       TF_VAR_management_key: ${{ secrets.PRODUCTION_MGMT_KEY || secrets.DESCOPE_MGMT_KEY }}
 
     steps:
