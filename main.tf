@@ -3,8 +3,8 @@ provider "descope" {
   management_key = var.management_key
 }
 
-resource "descope_project" "linktree_project" {
-  name = "Linktree Demo - PROD"
+resource "descope_project" "project" {
+  name = "Terraform Demo - PROD"
   environment = "production"
 
   flows = {
@@ -20,13 +20,6 @@ resource "descope_project" "linktree_project" {
   }
 
   connectors = {
-    "http": [
-      {
-        name = "Radiant Logic"
-        description = "Radiant Logic Connector for JIT"
-        base_url = "https://test-descope.free.beeceptor.com"
-      }
-    ],
     "hibp": [
       {
         name = "Have I Been Pwned"
@@ -38,7 +31,7 @@ resource "descope_project" "linktree_project" {
         name = "Email Connector"
         description = "Email Connector"
         sender = {
-          email = "support@linktree.com"
+          email = "support@company.com"
         }
         server = {
           host = "587"
