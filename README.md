@@ -30,7 +30,14 @@ This demo is designed for Descope Solutions Engineers (SEs) and Developer Relati
 
    These files should contain your current flow configurations. You can export them from your Descope Console or create them from scratch.
 
-3. Set up the following GitHub repository secrets and variables:
+3. Add a `terraform.tfvars` file to your root directory, with your Project ID and Management Key to run these Terraform plans locally as well
+
+   ```
+   management_key = "<Descope Management Key>"
+   project_id = "<Descope Project ID>"
+   ```
+
+4. Set up the following GitHub repository secrets and variables:
 
    **Secrets:**
 
@@ -41,7 +48,7 @@ This demo is designed for Descope Solutions Engineers (SEs) and Developer Relati
 
    - `STAGING_PROJECT_ID`: Your Descope Staging Project ID
 
-4. To set up GitHub secrets and variables:
+5. To set up GitHub secrets and variables:
    - Go to your repository settings
    - Navigate to "Secrets and variables" → "Actions"
    - Add each secret and variable as listed above
