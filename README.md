@@ -18,7 +18,7 @@ This demo is designed for Descope Solutions Engineers (SEs) and Developer Relati
 1. Fork or clone this repository:
 
    ```bash
-   git clone https://github.com/descope-dev/descope-terraform-demo.git
+   git clone https://github.com/descope-cx/descope-terraform-demo.git
    cd descope-terraform-demo
    ```
 
